@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".mis_participantes"
+            android:exported="false" />
+        <activity
             android:name=".menu"
             android:exported="false" />
         <activity
