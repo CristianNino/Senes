@@ -61,7 +61,7 @@
         app:layout_constraintVertical_bias="0.549" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonlog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingresar"

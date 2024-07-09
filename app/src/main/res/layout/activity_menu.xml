@@ -8,7 +8,7 @@
     tools:context=".menu">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButtonnuevo"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginStart="4dp"
@@ -18,7 +18,7 @@
         app:srcCompat="@mipmap/btn1_menu" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imageButtonparticipante"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="160dp"

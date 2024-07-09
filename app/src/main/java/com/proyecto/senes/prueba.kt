@@ -1,6 +1,8 @@
 package com.proyecto.senes
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +18,13 @@ class prueba : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val btninicio = findViewById<Button>(R.id.buttoninicio)
+        btninicio.setOnClickListener {
+            navigateToTyC()
+        }
+    }
+    private fun navigateToTyC() {
+        val intent = Intent(this, tyc::class.java)
+        startActivity(intent)
     }
 }

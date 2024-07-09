@@ -25,13 +25,12 @@
             android:name=".tyc"
             android:exported="false" />
         <activity
-            android:name=".prueba"
+            android:name=".registro_participante"
             android:exported="false" />
         <activity
-            android:name=".registro_participante"
+            android:name=".prueba"
             android:exported="true"
-            android:label="@string/title_activity_prueba"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:label="@string/title_activity_prueba">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
