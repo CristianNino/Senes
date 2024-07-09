@@ -13,13 +13,19 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".menu"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
             android:name=".tyc"
             android:exported="false" />
         <activity
             android:name=".prueba"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name=".registro_participante"
             android:exported="true"
             android:label="@string/title_activity_prueba"
             android:theme="@style/Theme.AppCompat.NoActionBar">
