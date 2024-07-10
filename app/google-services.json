@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "500877960332",
-    "project_id": "senes-b5cf2",
-    "storage_bucket": "senes-b5cf2.appspot.com"
+    "project_number": "746283665110",
+    "project_id": "senes-5e11f",
+    "storage_bucket": "senes-5e11f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:500877960332:android:e35d88e16f3a57fdeb87a9",
+        "mobilesdk_app_id": "1:746283665110:android:2388221fd6ffbd94c4ab77",
         "android_client_info": {
-          "package_name": "com.companyandroidsenes"
+          "package_name": "com.proyecto.senes"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAbJidMxgMcwJuqnQNOvQRf6nBTb9CeK5Y"
+          "current_key": "AIzaSyBFS5F5Y-Kb97wI-Ys-tZ9eAN1FXPLAYqU"
         }
       ],
       "services": {
