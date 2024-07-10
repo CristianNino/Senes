@@ -1,4 +1,9 @@
+import org.jetbrains.kotlin.cli.js.klib.TopDownAnalyzerFacadeForJSIR.platform
+
 plugins {
+    id("com.android.application")
+    id("com.google.gms.google-services")
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
@@ -74,4 +79,12 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+}
+
+fun implementation(platform: Any) {
+
+}
+
+fun platform(s: String): Any {
+
 }
