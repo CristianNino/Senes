@@ -1,13 +1,16 @@
 package com.proyecto.senes
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentDialog
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.proyecto.senes.databinding.ActivityRegistroParticipanteBinding
 
 class registro_participante : AppCompatActivity() {
@@ -16,19 +19,14 @@ class registro_participante : AppCompatActivity() {
     private lateinit var firebaseAuth : FirebaseAuth
     private lateinit var progressDialog: ProgressDialog
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityRegistroParticipanteBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
         firebaseAuth = FirebaseAuth.getInstance()
+
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Espere por favor")
         progressDialog.setCanceledOnTouchOutside(false)
@@ -39,16 +37,16 @@ class registro_participante : AppCompatActivity() {
     }
 
     private var nombres = ""
-    private var  apellidos = ""
+    private var apellidos = ""
+    private var cedula = ""
     private var sexo = ""
     private var nacimiento = ""
     private var patologia = ""
 
-
-
     private fun ValidarInformacion(){
         nombres = binding.editTextNombres.text.toString().trim()
         apellidos = binding.editTextApellidos.text.toString().trim()
+        cedula = binding.editTextCedula.text.toString().trim()
         sexo = binding.editTextSexo.text.toString().trim()
         nacimiento = binding.editTextNacimiento.text.toString().trim()
         patologia = binding.editTextPatologia.text.toString().trim()
@@ -59,6 +57,9 @@ class registro_participante : AppCompatActivity() {
         }else if(apellidos.isEmpty()){
             binding.editTextApellidos.error = "Ingrese los apellidos"
             binding.editTextApellidos.requestFocus()
+        }else if(cedula.isEmpty()){
+            binding.editTextCedula.error = "Ingrese la cedula"
+            binding.editTextCedula.requestFocus()
         }else if(sexo.isEmpty()){
             binding.editTextSexo.error = "Ingrese el sexo"
             binding.editTextSexo.requestFocus()
@@ -73,31 +74,43 @@ class registro_participante : AppCompatActivity() {
         }
 
     }
+
     private fun registrarParticipante() {
         progressDialog.setMessage("Creando participante")
         progressDialog.show()
         insetarInfoBD()
-
     }
-    private fun insetarInfoBD() {
-        progressDialog.setMessage("Guardando Informacion")
 
-        val uidBD = firebaseAuth.uid
+    private fun insetarInfoBD() {
+        progressDialog.setMessage("Guardando Informacion...")
+
         val nombreBD = nombres
         val apellidosBD = apellidos
+        val cedulaBD = cedula
         val sexoBD = sexo
         val nacimientoBD = nacimiento
         val patoogiaBD = patologia
 
         val datosParticipante = HashMap<String, Any>()
 
-        datosParticipante["uid"] = "$uidBD"
         datosParticipante["nombres"] = "$nombreBD"
         datosParticipante["apellidos"] = "$apellidosBD"
+        datosParticipante["cedula"] = "$cedulaBD"
         datosParticipante["sexo"] = "$sexoBD"
-        datosParticipante["Fecha de nacimiento"] = "$nacimientoBD"
+        datosParticipante["FechaNacimiento"] = "$nacimientoBD"
         datosParticipante["patologia"] = "$patoogiaBD"
 
-
+        val references = FirebaseDatabase.getInstance().getReference("Paticipantes")
+        references.child(cedulaBD)
+            .setValue(datosParticipante)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                startActivity(Intent(this, mis_participantes::class.java))
+                finish()
+            }
+            .addOnFailureListener{e->
+                progressDialog.dismiss()
+                Toast.makeText(this, "fallo el registro en BD debido a ${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 }
