@@ -10,14 +10,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.proyecto.senes.databinding.ActivityRegistroParticipanteBinding
+import com.proyecto.senes.modelo.Participante
 
 class registro_participante : AppCompatActivity() {
 
     private lateinit var binding : ActivityRegistroParticipanteBinding
     private lateinit var firebaseAuth : FirebaseAuth
     private lateinit var progressDialog: ProgressDialog
+    private lateinit var references: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,86 +34,53 @@ class registro_participante : AppCompatActivity() {
         progressDialog.setTitle("Espere por favor")
         progressDialog.setCanceledOnTouchOutside(false)
 
+        references = FirebaseDatabase.getInstance().getReference("Participantes")
+
         binding.buttonRegistroParticipante.setOnClickListener{
-            ValidarInformacion()
-        }
-    }
 
-    private var nombres = ""
-    private var apellidos = ""
-    private var cedula = ""
-    private var sexo = ""
-    private var nacimiento = ""
-    private var patologia = ""
+            val nombres = binding.editTextNombres.text.toString().trim()
+            val apellidos = binding.editTextApellidos.text.toString().trim()
+            val sexo = binding.editTextSexo.text.toString().trim()
+            val nacimiento = binding.editTextNacimiento.text.toString().trim()
+            val patologia = binding.editTextPatologia.text.toString().trim()
 
-    private fun ValidarInformacion(){
-        nombres = binding.editTextNombres.text.toString().trim()
-        apellidos = binding.editTextApellidos.text.toString().trim()
-        cedula = binding.editTextCedula.text.toString().trim()
-        sexo = binding.editTextSexo.text.toString().trim()
-        nacimiento = binding.editTextNacimiento.text.toString().trim()
-        patologia = binding.editTextPatologia.text.toString().trim()
+            if (nombres.isEmpty()){
+                binding.editTextNombres.error = "Ingrese los nombres"
+                binding.editTextNombres.requestFocus()
+            }else if(apellidos.isEmpty()){
+                binding.editTextApellidos.error = "Ingrese los apellidos"
+                binding.editTextApellidos.requestFocus()
+            }else if(sexo.isEmpty()){
+                binding.editTextSexo.error = "Ingrese el sexo"
+                binding.editTextSexo.requestFocus()
+            }else if(nacimiento.isEmpty()){
+                binding.editTextNacimiento.error = "Ingrese la fecha de nacimiento"
+                binding.editTextNacimiento.requestFocus()
+            }else if(patologia.isEmpty()){
+                binding.editTextPatologia.error = "Ingrese la patologia"
+                binding.editTextPatologia.requestFocus()
+            }else{
+                progressDialog.setMessage("Creando participante")
+                progressDialog.show()
+                progressDialog.setMessage("Guardando Informacion...")
 
-        if (nombres.isEmpty()){
-            binding.editTextNombres.error = "Ingrese los nombres"
-            binding.editTextNombres.requestFocus()
-        }else if(apellidos.isEmpty()){
-            binding.editTextApellidos.error = "Ingrese los apellidos"
-            binding.editTextApellidos.requestFocus()
-        }else if(cedula.isEmpty()){
-            binding.editTextCedula.error = "Ingrese la cedula"
-            binding.editTextCedula.requestFocus()
-        }else if(sexo.isEmpty()){
-            binding.editTextSexo.error = "Ingrese el sexo"
-            binding.editTextSexo.requestFocus()
-        }else if(nacimiento.isEmpty()){
-            binding.editTextNacimiento.error = "Ingrese la fecha de nacimiento"
-            binding.editTextNacimiento.requestFocus()
-        }else if(patologia.isEmpty()){
-            binding.editTextPatologia.error = "Ingrese la patologia"
-            binding.editTextPatologia.requestFocus()
-        }else{
-            registrarParticipante()
-        }
 
-    }
+                val id = references.child("Participantes").push().key
 
-    private fun registrarParticipante() {
-        progressDialog.setMessage("Creando participante")
-        progressDialog.show()
-        insetarInfoBD()
-    }
+                val participantem = Participante (id, nombres, apellidos,sexo,nacimiento,patologia)
 
-    private fun insetarInfoBD() {
-        progressDialog.setMessage("Guardando Informacion...")
-
-        val nombreBD = nombres
-        val apellidosBD = apellidos
-        val cedulaBD = cedula
-        val sexoBD = sexo
-        val nacimientoBD = nacimiento
-        val patoogiaBD = patologia
-
-        val datosParticipante = HashMap<String, Any>()
-
-        datosParticipante["nombres"] = "$nombreBD"
-        datosParticipante["apellidos"] = "$apellidosBD"
-        datosParticipante["cedula"] = "$cedulaBD"
-        datosParticipante["sexo"] = "$sexoBD"
-        datosParticipante["FechaNacimiento"] = "$nacimientoBD"
-        datosParticipante["patologia"] = "$patoogiaBD"
-
-        val references = FirebaseDatabase.getInstance().getReference("Paticipantes")
-        references.child(cedulaBD)
-            .setValue(datosParticipante)
-            .addOnSuccessListener {
-                progressDialog.dismiss()
-                startActivity(Intent(this, mis_participantes::class.java))
-                finish()
+                references.child(id!!)
+                    .setValue(participantem)
+                    .addOnSuccessListener {
+                        progressDialog.dismiss()
+                        startActivity(Intent(this, menu::class.java))
+                        finish()
+                    }
+                    .addOnFailureListener{e->
+                        progressDialog.dismiss()
+                        Toast.makeText(this, "fallo el registro en BD debido a ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
             }
-            .addOnFailureListener{e->
-                progressDialog.dismiss()
-                Toast.makeText(this, "fallo el registro en BD debido a ${e.message}", Toast.LENGTH_SHORT).show()
-            }
+        }
     }
 }
