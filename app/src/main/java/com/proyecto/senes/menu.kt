@@ -28,13 +28,12 @@ class menu : AppCompatActivity() {
         btnparticipante.setOnClickListener {
             navigateToParticipante()
         }
-
     }
     private fun navigateToNuevo() {
         val intent = Intent(this, registro_participante::class.java)
         startActivity(intent)}
     private fun navigateToParticipante() {
-        val intent = Intent(this, mis_participantes::class.java)
+        val intent = Intent(this, miparticipante::class.java)
         startActivity(intent)}
 
 }
