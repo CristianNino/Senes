@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/principal"
     tools:context=".miparticipante">
 
     <TextView
@@ -15,6 +16,7 @@
         android:text="Mis Participantes"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

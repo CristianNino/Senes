@@ -47,16 +47,22 @@
        >
        <Button
            android:id="@+id/buttonActualizar"
+           android:background="@drawable/botones_forma_osuro"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_weight="1"
-           android:text="Actualizar" />
+           android:text="Actualizar"
+           android:textSize="15sp"
+           android:textColor="@color/principal"/>
 
        <Button
            android:id="@+id/buttonVer"
+           android:background="@drawable/botones_forma_osuro"
            android:layout_width="105dp"
            android:layout_height="wrap_content"
            android:layout_weight="1"
+           android:textSize="15sp"
+           android:textColor="@color/principal"
            android:text="Seguir" />
     </LinearLayout>
 </LinearLayout>
