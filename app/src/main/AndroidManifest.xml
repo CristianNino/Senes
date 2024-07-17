@@ -15,7 +15,25 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".descripcion_bateria"
+            android:exported="false" />
+        <activity
+            android:name=".materiales_bateria"
+            android:exported="false" />
+        <activity
+            android:name=".info_bateria"
+            android:exported="false" />
+        <activity
             android:name=".prueba"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".mis_baterias"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
