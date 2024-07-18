@@ -15,6 +15,15 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".bateria_ejercicio3"
+            android:exported="false" />
+        <activity
+            android:name=".bateria_ejercicio2"
+            android:exported="false" />
+        <activity
+            android:name=".bateria_ejercicio1"
+            android:exported="false" />
+        <activity
             android:name=".descripcion_bateria"
             android:exported="false" />
         <activity
