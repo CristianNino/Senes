@@ -26,6 +26,7 @@
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:contentDescription="@string/todo"
             android:src="@drawable/icono_user"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
@@ -38,6 +39,7 @@
 
             <EditText
                 android:id="@+id/prompt_email"
+                android:autofillHints=""
                 android:hint="@string/prompt_email"
                 android:inputType="textEmailAddress"
                 android:drawableStart="@android:drawable/ic_dialog_email"
@@ -55,6 +57,7 @@
 
             <EditText
                 android:id="@+id/prompt_password"
+                android:autofillHints=""
                 android:hint="@string/prompt_password"
                 android:inputType="textPassword"
                 android:drawableStart="@android:drawable/ic_lock_idle_lock"

@@ -15,7 +15,7 @@
     <string name="txtLoginU">Login de Usuario</string>
     <string name="btnLoginU">Ingresar</string>
     <string name="tvRegistrarU">Registrarme</string>
-
+    <string name="todo">TODO</string>
 
 
 </resources>
