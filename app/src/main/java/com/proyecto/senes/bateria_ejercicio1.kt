@@ -13,8 +13,8 @@ class bateria_ejercicio1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_bateria_ejercicio1)
-        val btnseguir = findViewById<ImageButton>(R.id.imageButtonatra1)
-        val btnstras = findViewById<ImageButton>(R.id.imageButtonseguir1)
+        val btnstras = findViewById<ImageButton>(R.id.imageButtonatra1)
+        val btnseguir = findViewById<ImageButton>(R.id.imageButtonseguir1)
 
         btnseguir.setOnClickListener {
             navigateToSegir()
@@ -28,6 +28,6 @@ class bateria_ejercicio1 : AppCompatActivity() {
         val intent = Intent(this, bateria_ejercicio2::class.java)
         startActivity(intent)}
     private fun navigateToatras() {
-        val intent = Intent(this, mis_baterias::class.java)
+        val intent = Intent(this, descripcion_bateria::class.java)
         startActivity(intent)}
 }
