@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".prueba">
 
     <ImageView
@@ -31,9 +32,13 @@
 
     <Button
         android:id="@+id/buttoninicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="57dp"
+        android:background="@drawable/botones_forma_osuro"
         android:text="Inicio"
+        android:textColor="@color/principal"
+        android:textSize="20sp"
+
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
