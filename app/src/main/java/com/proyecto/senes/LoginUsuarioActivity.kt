@@ -11,5 +11,6 @@ class LoginUsuarioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_usuario)
 
+        /*Cargue comits*/
     }
 }
