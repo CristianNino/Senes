@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/mainlogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginUsuarioActivity">
+    tools:context=".loginusuarioactivity">
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -16,21 +16,21 @@
         android:padding="15dp">
 
         <TextView
-            android:text="@string/txtLoginU"
-            android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:id="@+id/TextViewlogin"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Login"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/icono_user"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@mipmap/icono_user"/>
 
         <!--Email-->
         <com.google.android.material.textfield.TextInputLayout
@@ -38,67 +38,67 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/prompt_email"
+                android:id="@+id/promptemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:hint="@string/prompt_email"
-                android:inputType="textEmailAddress"
                 android:drawableStart="@android:drawable/ic_dialog_email"
                 android:drawablePadding="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--Password-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnable="true">
+            android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/prompt_password"
+                android:id="@+id/promptpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:hint="@string/prompt_password"
-                android:inputType="textPassword"
                 android:drawableStart="@android:drawable/ic_lock_idle_lock"
                 android:drawablePadding="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:hint="@string/prompt_password"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--Login de Usuario-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLoginU"
-            android:text="@string/btnLoginU"
-            android:textAllCaps="true"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
-            app:cornerRadius="8dp"
-
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="ingresar"
+            android:textAllCaps="true"
+            app:cornerRadius="8dp" />
 
         <!--txt-->
 
         <TextView
-            android:text="@string/common_signin_button_text_long"
+            android:id="@+id/btngoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_margin="10dp"
             android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:text="@string/common_signin_button_text_long" />
 
         <!--Registrar Usuario-->
         <TextView
-            android:text="@string/common_signin_button_text"
+            android:id="@+id/registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_margin="10dp"
             android:layout_marginTop="10dp"
-            android:textSize="17sp"
-            android:textStyle="bold"
+            android:text="@string/common_signin_button_text"
             android:textColor="@color/principal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textSize="17sp"
+            android:textStyle="bold" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 

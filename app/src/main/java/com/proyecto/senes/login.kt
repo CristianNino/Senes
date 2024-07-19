@@ -19,10 +19,20 @@ class login : AppCompatActivity() {
             insets
         }
         val btnlog = findViewById<Button>(R.id.buttonlog)
+        val btnregis = findViewById<Button>(R.id.buttonregis)
         btnlog.setOnClickListener {
             navigateToMenu()
         }
+        btnregis.setOnClickListener{
+            NavigateToRegis()
+        }
     }
+
+    private fun NavigateToRegis() {
+        val intent = Intent(this, loginusuarioactivity::class.java)
+        startActivity(intent)
+    }
+
     private fun navigateToMenu() {
         val intent = Intent(this, menu::class.java)
         startActivity(intent)
