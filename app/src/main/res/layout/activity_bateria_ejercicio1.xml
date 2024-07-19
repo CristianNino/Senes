@@ -29,11 +29,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editTextChairstand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="15sp"
         android:background="@drawable/botones_forma_osuro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,11 +45,13 @@
         app:layout_constraintVertical_bias="0.29" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editTextArmcurl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="15sp"
         android:background="@drawable/botones_forma_osuro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

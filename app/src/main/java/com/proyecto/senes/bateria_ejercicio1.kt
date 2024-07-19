@@ -7,17 +7,37 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.proyecto.senes.databinding.ActivityBateriaEjercicio1Binding
+import com.proyecto.senes.databinding.ActivityBateriaEjercicio3Binding
+import com.proyecto.senes.databinding.ActivityRegistroParticipanteBinding
 
 class bateria_ejercicio1 : AppCompatActivity() {
+
+    private lateinit var binding: ActivityBateriaEjercicio1Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_bateria_ejercicio1)
+        binding = ActivityBateriaEjercicio1Binding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         val btnstras = findViewById<ImageButton>(R.id.imageButtonatra1)
         val btnseguir = findViewById<ImageButton>(R.id.imageButtonseguir1)
 
         btnseguir.setOnClickListener {
-            navigateToSegir()
+
+            var puntuacion1 =binding.editTextChairstand.text.toString().trim()
+            val puntuacion2 =binding.editTextArmcurl.text.trim()
+
+            if(puntuacion1.isEmpty()){
+                binding.editTextChairstand.error = "Ingrese la puntuacion"
+                binding.editTextChairstand.requestFocus()
+            }else if (puntuacion2.isEmpty()){
+                binding.editTextArmcurl.error = "Ingrese la puntuacion"
+                binding.editTextArmcurl.requestFocus()
+            }else{
+                navigateToSegir()
+            }
         }
         btnstras.setOnClickListener {
             navigateToatras()
