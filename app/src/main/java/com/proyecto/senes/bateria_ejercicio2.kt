@@ -23,26 +23,35 @@ class bateria_ejercicio2 : AppCompatActivity() {
         val btnseguir = findViewById<ImageButton>(R.id.imageButtonseguir2)
 
         btnseguir.setOnClickListener {
-            var puntuacion1 =binding.editTextCharsit.text.toString().trim()
-            val puntuacion2 =binding.editTextBackstrach.text.toString().trim()
+            var puntuacion1 =binding.editTexta3.text.toString().trim()
+            val puntuacion2 =binding.editTexta4.text.toString().trim()
 
             if(puntuacion1.isEmpty()){
-                binding.editTextCharsit.error = "Ingrese la puntuacion"
-                binding.editTextCharsit.requestFocus()
+                binding.editTexta3.error = "Ingrese la puntuacion"
+                binding.editTexta3.requestFocus()
             }else if (puntuacion2.isEmpty()){
-                binding.editTextBackstrach.error = "Ingrese la puntuacion"
-                binding.editTextBackstrach.requestFocus()
+                binding.editTexta4.error = "Ingrese la puntuacion"
+                binding.editTexta4.requestFocus()
             }else{
-                navigateToSegir()
+                val dato3 = Bundle()
+                val dato4 = Bundle()
+
+                dato3.putString("Keydato3", puntuacion1.toString())
+                dato4.putString("Keydato4", puntuacion2.toString())
+
+                val intent3 = Intent(this, resultado::class.java)
+                intent3.putExtras(dato3)
+                intent3.putExtras(dato4)
+                startActivity(intent3)
+
+                val intent = Intent(this, bateria_ejercicio3::class.java)
+                startActivity(intent)
             }
         }
         btnstras.setOnClickListener {
             navigateToatras()
         }
     }
-    private fun navigateToSegir() {
-        val intent = Intent(this, bateria_ejercicio3::class.java)
-        startActivity(intent)}
     private fun navigateToatras() {
         val intent = Intent(this, bateria_ejercicio1::class.java)
         startActivity(intent)}

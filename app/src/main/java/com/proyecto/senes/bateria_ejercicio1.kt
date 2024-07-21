@@ -26,17 +26,29 @@ class bateria_ejercicio1 : AppCompatActivity() {
 
         btnseguir.setOnClickListener {
 
-            var puntuacion1 =binding.editTextChairstand.text.toString().trim()
-            val puntuacion2 =binding.editTextArmcurl.text.trim()
+            var puntuacion1 =binding.editTexta1.text.toString().trim()
+            val puntuacion2 =binding.editTexta2.text.trim()
 
             if(puntuacion1.isEmpty()){
-                binding.editTextChairstand.error = "Ingrese la puntuacion"
-                binding.editTextChairstand.requestFocus()
+                binding.editTexta1.error = "Ingrese la puntuacion"
+                binding.editTexta1.requestFocus()
             }else if (puntuacion2.isEmpty()){
-                binding.editTextArmcurl.error = "Ingrese la puntuacion"
-                binding.editTextArmcurl.requestFocus()
+                binding.editTexta2.error = "Ingrese la puntuacion"
+                binding.editTexta2.requestFocus()
             }else{
-                navigateToSegir()
+
+                val dato1 = Bundle()
+                val dato2 = Bundle()
+
+                dato1.putString("Keydato1", puntuacion1)
+                dato2.putString("Keydato2", puntuacion2.toString())
+
+                val intent = Intent(this, bateria_ejercicio2::class.java)
+                startActivity(intent)
+
+                val intent2 = Intent(this, resultado::class.java)
+                intent2.putExtras(dato1)
+                intent2.putExtras(dato2)
             }
         }
         btnstras.setOnClickListener {
@@ -44,10 +56,8 @@ class bateria_ejercicio1 : AppCompatActivity() {
         }
 
     }
-    private fun navigateToSegir() {
-        val intent = Intent(this, bateria_ejercicio2::class.java)
-        startActivity(intent)}
     private fun navigateToatras() {
         val intent = Intent(this, descripcion_bateria::class.java)
         startActivity(intent)}
 }
+

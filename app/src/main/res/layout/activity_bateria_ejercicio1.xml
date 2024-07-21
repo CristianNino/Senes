@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextChairstand"
+        android:id="@+id/editTexta1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="0.29" />
 
     <EditText
-        android:id="@+id/editTextArmcurl"
+        android:id="@+id/editTexta2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
