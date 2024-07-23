@@ -29,7 +29,7 @@ class login : AppCompatActivity() {
     }
 
     private fun NavigateToRegis() {
-        val intent = Intent(this, loginusuarioactivity::class.java)
+        val intent = Intent(this, registrousuario::class.java)
         startActivity(intent)
     }
 
