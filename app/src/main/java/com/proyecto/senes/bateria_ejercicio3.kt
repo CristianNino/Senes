@@ -22,8 +22,8 @@ class bateria_ejercicio3 : AppCompatActivity() {
         val btnstras = findViewById<ImageButton>(R.id.imageButtonatras3)
         val btnseguir = findViewById<ImageButton>(R.id.imageButtonseguir3)
 
-
         btnseguir.setOnClickListener {
+
             val puntuacion1 =binding.editTexta5.text.toString().trim()
             val puntuacion2 =binding.editTexta6.text.toString().trim()
 
@@ -34,15 +34,20 @@ class bateria_ejercicio3 : AppCompatActivity() {
                 binding.editTexta6.error = "Ingrese la puntuacion"
                 binding.editTexta6.requestFocus()
             }else{
-                val dato5 = Bundle()
-                val dato6 = Bundle()
 
-                dato5.putString("Keydato5", puntuacion1)
-                dato6.putString("Keydato6", puntuacion2)
+                val vr1 = intent.getStringExtra("keyeje1")
+                val vr2 = intent.getStringExtra("keyeje2")
+                val vr3 = intent.getStringExtra("key3")
+                val vr4 = intent.getStringExtra("key4")
 
-                val intent = Intent(this, resultado::class.java)
-                intent.putExtras(dato5)
-                intent.putExtras(dato6)
+                val intent = Intent(this, resultado::class.java).apply {
+                    putExtra("keyejercicio1", vr1)
+                    putExtra("keyejercicio2", vr2)
+                    putExtra("keyejercicio3", vr3)
+                    putExtra("keyejercicio4", vr4)
+                    putExtra("key5", puntuacion1)
+                    putExtra("key6", puntuacion2)
+                }
                 startActivity(intent)
             }
         }
@@ -54,6 +59,7 @@ class bateria_ejercicio3 : AppCompatActivity() {
         val intent = Intent(this, bateria_ejercicio2::class.java)
         startActivity(intent)}
 }
+
 
 
 

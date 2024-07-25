@@ -24,10 +24,11 @@ class bateria_ejercicio1 : AppCompatActivity() {
         val btnstras = findViewById<ImageButton>(R.id.imageButtonatra1)
         val btnseguir = findViewById<ImageButton>(R.id.imageButtonseguir1)
 
+
         btnseguir.setOnClickListener {
 
-            var puntuacion1 =binding.editTexta1.text.toString().trim()
-            val puntuacion2 =binding.editTexta2.text.trim()
+            val puntuacion1 =binding.editTexta1.text.toString().trim()
+            val puntuacion2 =binding.editTexta2.text.toString().trim()
 
             if(puntuacion1.isEmpty()){
                 binding.editTexta1.error = "Ingrese la puntuacion"
@@ -37,18 +38,11 @@ class bateria_ejercicio1 : AppCompatActivity() {
                 binding.editTexta2.requestFocus()
             }else{
 
-                val dato1 = Bundle()
-                val dato2 = Bundle()
-
-                dato1.putString("Keydato1", puntuacion1)
-                dato2.putString("Keydato2", puntuacion2.toString())
-
-                val intent = Intent(this, bateria_ejercicio2::class.java)
-                startActivity(intent)
-
-                val intent2 = Intent(this, resultado::class.java)
-                intent2.putExtras(dato1)
-                intent2.putExtras(dato2)
+                val intent2 = Intent(this, bateria_ejercicio2::class.java).apply {
+                    putExtra("key1", puntuacion1)
+                    putExtra("key2", puntuacion2)
+                }
+                startActivity(intent2)
             }
         }
         btnstras.setOnClickListener {

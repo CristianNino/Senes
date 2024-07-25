@@ -3,6 +3,7 @@ package com.proyecto.senes
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -33,19 +34,18 @@ class bateria_ejercicio2 : AppCompatActivity() {
                 binding.editTexta4.error = "Ingrese la puntuacion"
                 binding.editTexta4.requestFocus()
             }else{
-                val dato3 = Bundle()
-                val dato4 = Bundle()
 
-                dato3.putString("Keydato3", puntuacion1.toString())
-                dato4.putString("Keydato4", puntuacion2.toString())
+                val vr1 = intent.getStringExtra("key1")
+                val vr2 = intent.getStringExtra("key2")
 
-                val intent3 = Intent(this, resultado::class.java)
-                intent3.putExtras(dato3)
-                intent3.putExtras(dato4)
+                val intent3 = Intent(this, bateria_ejercicio3::class.java).apply {
+                    putExtra("keyeje1", vr1)
+                    putExtra("keyeje2", vr2)
+                    putExtra("key3", puntuacion1)
+                    putExtra("key4", puntuacion2)
+                }
+
                 startActivity(intent3)
-
-                val intent = Intent(this, bateria_ejercicio3::class.java)
-                startActivity(intent)
             }
         }
         btnstras.setOnClickListener {
