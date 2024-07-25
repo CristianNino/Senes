@@ -17,6 +17,7 @@ import com.proyecto.senes.databinding.ActivityRegistrousuarioBinding
 import org.intellij.lang.annotations.Pattern
 
 class registrousuario : AppCompatActivity() {
+
     private lateinit var binding: ActivityRegistrousuarioBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var progressDialog: ProgressDialog
@@ -103,7 +104,7 @@ class registrousuario : AppCompatActivity() {
             .setValue(datosUsuario)
             .addOnSuccessListener {
                 progressDialog.dismiss()
-                startActivity(Intent(this, login::class.java))
+                startActivity(Intent(this, login_usuario::class.java))
                 finish()
             }
             .addOnFailureListener { e ->

@@ -15,6 +15,15 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".prueba"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".registrousuario"
             android:exported="false" />
         <activity
@@ -39,7 +48,7 @@
             android:name=".info_bateria"
             android:exported="false" />
         <activity
-            android:name=".prueba"
+            android:name=".login_usuario"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +58,7 @@
         </activity>
         <activity
             android:name=".mis_baterias"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".menu"
             android:exported="false" />
@@ -65,7 +74,7 @@
         <activity
             android:name=".miparticipante"
             android:exported="true"
-            android:label="@string/title_activity_prueba"></activity>
+            android:label="@string/title_activity_prueba" />
     </application>
 
 </manifest>

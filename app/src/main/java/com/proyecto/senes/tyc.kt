@@ -24,7 +24,7 @@ class tyc : AppCompatActivity() {
         }
     }
     private fun navigateToLogin() {
-        val intent = Intent(this, login::class.java)
+        val intent = Intent(this, login_usuario::class.java)
         startActivity(intent)
     }
 }
