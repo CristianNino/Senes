@@ -1,8 +1,12 @@
 package com.proyecto.senes
 
+import android.app.DatePickerDialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.DatePicker
 import android.widget.Toast
 import androidx.activity.ComponentDialog
 import androidx.activity.enableEdgeToEdge
@@ -14,6 +18,9 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.proyecto.senes.databinding.ActivityRegistroParticipanteBinding
 import com.proyecto.senes.modelo.Participante
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class registro_participante : AppCompatActivity() {
 
@@ -36,12 +43,15 @@ class registro_participante : AppCompatActivity() {
 
         references = FirebaseDatabase.getInstance().getReference("Participantes")
 
+        seleccionGenero()
+        calendariofecha()
+
         binding.buttonRegistroParticipante.setOnClickListener{
 
             val nombres = binding.editTextNombres.text.toString().trim()
             val apellidos = binding.editTextApellidos.text.toString().trim()
-            val sexo = binding.editTextSexo.text.toString().trim()
-            val nacimiento = binding.editTextNacimiento.text.toString().trim()
+            val sexo = binding.autoCompleteTextsexo.text.toString().trim()
+            val nacimiento = binding.textViewfecha.text.toString().trim()
             val patologia = binding.editTextPatologia.text.toString().trim()
 
             if (nombres.isEmpty()){
@@ -50,12 +60,12 @@ class registro_participante : AppCompatActivity() {
             }else if(apellidos.isEmpty()){
                 binding.editTextApellidos.error = "Ingrese los apellidos"
                 binding.editTextApellidos.requestFocus()
-            }else if(sexo.isEmpty()){
-                binding.editTextSexo.error = "Ingrese el sexo"
-                binding.editTextSexo.requestFocus()
             }else if(nacimiento.isEmpty()){
-                binding.editTextNacimiento.error = "Ingrese la fecha de nacimiento"
-                binding.editTextNacimiento.requestFocus()
+                binding.textViewfecha.error = "Ingrese los apellidos"
+                binding.textViewfecha.requestFocus()
+            }else if(sexo.isEmpty()){
+                binding.autoCompleteTextsexo.error = "Ingrese el sexo"
+                binding.autoCompleteTextsexo.requestFocus()
             }else if(patologia.isEmpty()){
                 binding.editTextPatologia.error = "Ingrese la patologia"
                 binding.editTextPatologia.requestFocus()
@@ -82,5 +92,50 @@ class registro_participante : AppCompatActivity() {
                     }
             }
         }
+    }
+
+    private fun seleccionGenero() {
+        val gen = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextsexo)
+
+        val sugerencias = resources.getStringArray(R.array.optiones)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, sugerencias)
+
+        gen.setAdapter(adapter)
+
+        gen.setOnItemClickListener{ _,_, posicion,_ ->
+            val elemento = sugerencias[posicion]
+        }
+        gen.setOnClickListener{
+            gen.showDropDown()
+        }
+    }
+
+    private fun calendariofecha() {
+        val calendario = Calendar.getInstance()
+        val fecha = DatePickerDialog.OnDateSetListener{view: DatePicker?, year: Int, month: Int, day: Int ->
+            calendario.set(Calendar.YEAR, year)
+            calendario.set(Calendar.MONTH, month)
+            calendario.set(Calendar.DAY_OF_MONTH, day)
+
+            actualizarFecha(calendario)
+        }
+
+        binding.buttoncalendario.setOnClickListener {
+            DatePickerDialog(
+                this,
+                fecha,
+                calendario.get(Calendar.YEAR),
+                calendario.get(Calendar.MONTH),
+                calendario.get(Calendar.DAY_OF_MONTH)
+            ).show()
+        }
+    }
+
+
+    private fun actualizarFecha (calendar: Calendar){
+        val formatofecha = "dd-MM-yyyy"
+        val formatosimple = SimpleDateFormat(formatofecha, Locale.ENGLISH)
+        binding.textViewfecha.text = formatosimple.format(calendar.time)
+
     }
 }

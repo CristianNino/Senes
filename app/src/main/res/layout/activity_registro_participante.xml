@@ -130,33 +130,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.288" />
 
-    <EditText
-        android:id="@+id/editTextSexo"
+    <LinearLayout
         android:layout_width="338dp"
         android:layout_height="62dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="sexo"
-        android:inputType="text"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
+        app:layout_constraintVertical_bias="0.463">
 
-    <EditText
-        android:id="@+id/editTextNacimiento"
-        android:layout_width="338dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Fecha de Nacimiento"
-        android:inputType="text"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464" />
+
+        <TextView
+            android:id="@+id/textViewfecha"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:text="Fecha de nacimiento"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/buttoncalendario"
+            android:layout_width="142dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/botones_forma"
+            android:text="selecciona fecha" />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/editTextPatologia"
@@ -188,5 +189,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.652" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextsexo"
+        android:layout_width="338dp"
+        android:layout_height="62dp"
+        android:inputType="none"
+        android:hint="Sexo"
+        android:completionThreshold="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

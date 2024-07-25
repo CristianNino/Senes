@@ -15,8 +15,6 @@ class resultado : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_resultado)
 
-
-
         val valorR1 = intent.getStringExtra("keyejercicio1")
         val valorR2 = intent.getStringExtra("keyejercicio2")
         val valorR3 = intent.getStringExtra("keyejercicio3")
@@ -37,6 +35,10 @@ class resultado : AppCompatActivity() {
         textActividad4.text = valorR4
         textActividad5.text = valorR5
         textActividad6.text = valorR6
+
+
+
+
 
 
 
