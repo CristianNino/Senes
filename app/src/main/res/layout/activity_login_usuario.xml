@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Login"
+            android:text="Inicia sesión"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -30,7 +30,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            app:srcCompat="@mipmap/icono_user"/>
+            app:srcCompat="@mipmap/icono_user" />
 
         <!--Email-->
         <com.google.android.material.textfield.TextInputLayout
@@ -38,13 +38,13 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/promptemail"
+                android:id="@+id/correologinuser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:drawableStart="@android:drawable/ic_dialog_email"
                 android:drawablePadding="5dp"
-                android:hint="@string/prompt_email"
+                android:hint="Correo"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/pDptpassword"
+                android:id="@+id/contrasenaloginuser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
@@ -67,12 +67,12 @@
 
         <!--Login de Usuario-->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLoginU"
+            android:id="@+id/botoningresarloginuser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:gravity="center"
-            android:text="ingresar"
+            android:text="Ingresar"
             android:textAllCaps="true"
             app:cornerRadius="8dp" />
 
@@ -85,7 +85,7 @@
             android:layout_gravity="end"
             android:layout_margin="10dp"
             android:layout_marginTop="10dp"
-            android:text="@string/common_signin_button_text_long" />
+            android:text="¿No tienes cuenta?" />
 
         <!--Registrar Usuario-->
         <TextView
@@ -95,9 +95,9 @@
             android:layout_gravity="end"
             android:layout_margin="10dp"
             android:layout_marginTop="10dp"
-            android:text="@string/common_signin_button_text"
+            android:text="Registrarme"
             android:textColor="@color/principal"
-            android:textSize="17sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
