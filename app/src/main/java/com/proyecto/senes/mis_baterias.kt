@@ -29,7 +29,7 @@ class mis_baterias : AppCompatActivity() {
     }
 
     private fun SeguirBateria() {
-        val intent = Intent(this, info_bateria::class.java)
+        val intent = Intent(this, select_participante::class.java)
         startActivity(intent) }
     private fun navigateToatras() {
         val intent = Intent(this, menu::class.java)

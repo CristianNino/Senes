@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+
+    android:background="@drawable/botones_forma_osuro"
+    tools:context=".registro_participante">
+
+    <TextView
+        android:id="@+id/textViewselectNombre"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:text="Nombres"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/principal"/>
+
+    <TextView
+        android:id="@+id/textViewselectApellido"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:text="Apellidos"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/principal"/>
+
+    <Button
+        android:id="@+id/buttonselect"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/botones_forma_osuro"
+        android:text="seleccionar"
+        android:layout_gravity="center"
+        android:textColor="@color/principal"
+        android:textSize="15sp" />
+</LinearLayout>
