@@ -11,31 +11,193 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Material bateria"
+        android:text="Material_bateria"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.076" />
 
     <ImageButton
         android:id="@+id/imageButtonmateatras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="93dp"
+        android:layout_height="95dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955"
         app:srcCompat="@mipmap/regresar" />
 
     <ImageButton
         android:id="@+id/imageButtonmateseguir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="99dp"
+        android:layout_height="94dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.953"
         app:srcCompat="@mipmap/seguir" />
+
+    <TextView
+        android:id="@+id/descripcionMateriales"
+        android:layout_width="330dp"
+        android:layout_height="84dp"
+        android:text="Es importante que el material necesario para realizar las pruebas este preparado con anterioridad:"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/cintametrica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Cinta métrica (5-10 metros)"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <TextView
+        android:id="@+id/contador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Contador de pasos"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551" />
+
+    <TextView
+        android:id="@+id/mancuernastext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Mancuernas de 5 y 8 libras, escala"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
+
+    <TextView
+        android:id="@+id/cintatext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Cinta adhesiva"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.381" />
+
+    <TextView
+        android:id="@+id/sillatext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Sillas"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28" />
+
+    <TextView
+        android:id="@+id/palillos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- 4 conos, palillos"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/regla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Regla"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.518" />
+
+    <TextView
+        android:id="@+id/lapicero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Lapiceros"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.584" />
+
+    <TextView
+        android:id="@+id/cronometrotext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Cronómetro"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.313" />
+
+    <TextView
+        android:id="@+id/cuerdatext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Un trozo de cuerda o cordón"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.248"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415" />
+
+    <ImageView
+        android:id="@+id/participanteimagen"
+        android:layout_width="249dp"
+        android:layout_height="283dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.968"
+        app:srcCompat="@mipmap/participante" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,32 +9,111 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Info bateria"
-        android:textSize="40sp"
+        android:layout_width="362dp"
+        android:layout_height="45dp"
+        android:text="Batería Senior Fitness Test"
+        android:textSize="29sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069" />
 
     <ImageButton
         android:id="@+id/imageButtoninfoatras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954"
         app:srcCompat="@mipmap/regresar" />
 
     <ImageButton
         android:id="@+id/imageButtoninfoseguir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954"
         app:srcCompat="@mipmap/seguir" />
+
+    <TextView
+        android:id="@+id/novenotexto"
+        android:layout_width="364dp"
+        android:layout_height="131dp"
+        android:text="La batería Senior Fitness Test posibilita la evaluación del nivel de condición física desde una perspectiva de ponderación de los atributos físicos necesarios para sostener el estado funcional en personas con edades entre los 60 y 94 años."
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.146" />
+
+    <TextView
+        android:id="@+id/decimotexto"
+        android:layout_width="362dp"
+        android:layout_height="135dp"
+        android:text="La anterior, se desarrolla de manera segura, sencilla y con poco recursos, además, dispone de valores estándar a partir de un estudio desarrollado en Estados Unidos y con valores psicométricos propios para población colombiana."
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.349" />
+
+    <TextView
+        android:id="@+id/oncetexto"
+        android:layout_width="364dp"
+        android:layout_height="56dp"
+        android:text="Objetivo: Valorar la condición física de los adultos mayores."
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496" />
+
+    <ImageView
+        android:id="@+id/cuadroblanco"
+        android:layout_width="360dp"
+        android:layout_height="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.756"
+        app:srcCompat="@mipmap/text_tyc" />
+
+    <ImageView
+        android:id="@+id/lapizlogo"
+        android:layout_width="75dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        app:srcCompat="@mipmap/lapizlogo" />
+
+    <ImageView
+        android:id="@+id/flechalogo"
+        android:layout_width="187dp"
+        android:layout_height="107dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.743"
+        app:srcCompat="@mipmap/flechalogo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

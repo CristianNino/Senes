@@ -8,33 +8,65 @@
     tools:context=".descripcion_bateria">
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="descipcion bateria"
-        android:textSize="40sp"
+        android:id="@+id/descripcionbateria1"
+        android:layout_width="351dp"
+        android:layout_height="256dp"
+        android:text="Descripción de la(s) Prueba (s) La descripción completa que a continuación se presenta de cada uno de los test que componen la batería Senior Fitness Test incluyendo el objetivo, el procedimiento, la puntuación y normas de seguridad, estan completamente alineados a los parámetros dispuestos en el manual propuesto por sus creadoras."
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.311" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="349dp"
+        android:layout_height="78dp"
+        android:text="Descripción Batería Senior Fitness Test"
+        android:textSize="29sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.108" />
 
     <ImageButton
         android:id="@+id/imageButtondescripatras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.937"
         app:srcCompat="@mipmap/regresar" />
 
     <ImageButton
         android:id="@+id/imageButtondescripseguir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.937"
         app:srcCompat="@mipmap/seguir" />
+
+    <ImageView
+        android:id="@+id/lupa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71"
+        app:srcCompat="@mipmap/decoracion" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

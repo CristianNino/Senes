@@ -14,9 +14,10 @@
         android:text="Puntuacion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <TextView
         android:id="@+id/textView9"
@@ -25,70 +26,111 @@
         android:text="Puntuacion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.446" />
 
     <EditText
         android:id="@+id/editTexta1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/botones_forma_osuro"
         android:ems="10"
         android:inputType="number"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:background="@drawable/botones_forma_osuro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29" />
+        app:layout_constraintVertical_bias="0.403" />
 
     <EditText
         android:id="@+id/editTexta2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/botones_forma_osuro"
         android:ems="10"
         android:inputType="number"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:background="@drawable/botones_forma_osuro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintVertical_bias="0.811" />
 
     <ImageButton
         android:id="@+id/imageButtonseguir1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956"
         app:srcCompat="@mipmap/seguir" />
 
     <ImageButton
         android:id="@+id/imageButtonatra1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956"
         app:srcCompat="@mipmap/regresar" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ejercicios 1 y 2"
-        android:textSize="40sp"
+        android:id="@+id/primertexto"
+        android:layout_width="354dp"
+        android:layout_height="42dp"
+        android:text="Sentarse y levantarse de una silla (Chair Stand Test) Objetivo: Evaluar la fuerza del tren inferior."
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <TextView
+        android:id="@+id/segundotexto"
+        android:layout_width="354dp"
+        android:layout_height="42dp"
+        android:text="Flexiones del brazo (Arm Curl Test) Objetivo: Evaluar la fuerza del tren superior."
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ejercicio1"
+        android:layout_width="162dp"
+        android:layout_height="168dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintVertical_bias="0.191"
+        app:srcCompat="@mipmap/ejercicio1" />
+
+    <ImageView
+        android:id="@+id/ejercicio2"
+        android:layout_width="138dp"
+        android:layout_height="175dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.696"
+        app:srcCompat="@mipmap/ejercicio2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
