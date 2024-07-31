@@ -42,5 +42,5 @@ class menu : AppCompatActivity() {
     private fun navigateToBaterias() {
         val intent = Intent(this, mis_baterias::class.java)
         startActivity(intent)}
-
+/*"Revision"*/
 }
