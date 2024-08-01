@@ -3,6 +3,7 @@ package com.proyecto.senes
 import android.app.DatePickerDialog
 import android.app.ProgressDialog
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -10,6 +11,7 @@ import android.widget.DatePicker
 import android.widget.Toast
 import androidx.activity.ComponentDialog
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -19,13 +21,16 @@ import com.google.firebase.database.FirebaseDatabase
 import com.proyecto.senes.databinding.ActivityRegistroParticipanteBinding
 import com.proyecto.senes.modelo.Participante
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.Period
+import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Locale
 
 class registro_participante : AppCompatActivity() {
 
-    private lateinit var binding : ActivityRegistroParticipanteBinding
-    private lateinit var firebaseAuth : FirebaseAuth
+    private lateinit var binding: ActivityRegistroParticipanteBinding
+    private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var progressDialog: ProgressDialog
     private lateinit var references: DatabaseReference
 
@@ -46,30 +51,33 @@ class registro_participante : AppCompatActivity() {
         seleccionGenero()
         calendariofecha()
 
-        binding.buttonRegistroParticipante.setOnClickListener{
+
+
+        binding.buttonRegistroParticipante.setOnClickListener {
 
             val nombres = binding.editTextNombres.text.toString().trim()
             val apellidos = binding.editTextApellidos.text.toString().trim()
             val sexo = binding.autoCompleteTextsexo.text.toString().trim()
             val nacimiento = binding.textViewfecha.text.toString().trim()
             val patologia = binding.editTextPatologia.text.toString().trim()
+            val edad = binding.textViewEdad.text.toString().trim()
 
-            if (nombres.isEmpty()){
+            if (nombres.isEmpty()) {
                 binding.editTextNombres.error = "Ingrese los nombres"
                 binding.editTextNombres.requestFocus()
-            }else if(apellidos.isEmpty()){
+            } else if (apellidos.isEmpty()) {
                 binding.editTextApellidos.error = "Ingrese los apellidos"
                 binding.editTextApellidos.requestFocus()
-            }else if(nacimiento.isEmpty()){
+            } else if (nacimiento.isEmpty()) {
                 binding.textViewfecha.error = "Ingrese los apellidos"
                 binding.textViewfecha.requestFocus()
-            }else if(sexo.isEmpty()){
+            } else if (sexo.isEmpty()) {
                 binding.autoCompleteTextsexo.error = "Ingrese el sexo"
                 binding.autoCompleteTextsexo.requestFocus()
-            }else if(patologia.isEmpty()){
+            } else if (patologia.isEmpty()) {
                 binding.editTextPatologia.error = "Ingrese la patologia"
                 binding.editTextPatologia.requestFocus()
-            }else{
+            } else {
                 progressDialog.setMessage("Creando participante")
                 progressDialog.show()
                 progressDialog.setMessage("Guardando Informacion...")
@@ -77,7 +85,8 @@ class registro_participante : AppCompatActivity() {
 
                 val id = references.child("Participantes").push().key
 
-                val participantem = Participante (id, nombres, apellidos,sexo,nacimiento,patologia)
+                val participantem =
+                    Participante(id, nombres, apellidos, sexo, nacimiento, patologia, edad)
 
                 references.child(id!!)
                     .setValue(participantem)
@@ -86,9 +95,13 @@ class registro_participante : AppCompatActivity() {
                         startActivity(Intent(this, menu::class.java))
                         finish()
                     }
-                    .addOnFailureListener{e->
+                    .addOnFailureListener { e ->
                         progressDialog.dismiss()
-                        Toast.makeText(this, "fallo el registro en BD debido a ${e.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this,
+                            "fallo el registro en BD debido a ${e.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
             }
         }
@@ -102,40 +115,46 @@ class registro_participante : AppCompatActivity() {
 
         gen.setAdapter(adapter)
 
-        gen.setOnItemClickListener{ _,_, posicion,_ ->
+        gen.setOnItemClickListener { _, _, posicion, _ ->
             val elemento = sugerencias[posicion]
         }
-        gen.setOnClickListener{
+        gen.setOnClickListener {
             gen.showDropDown()
         }
     }
-
     private fun calendariofecha() {
-        val calendario = Calendar.getInstance()
-        val fecha = DatePickerDialog.OnDateSetListener{view: DatePicker?, year: Int, month: Int, day: Int ->
-            calendario.set(Calendar.YEAR, year)
-            calendario.set(Calendar.MONTH, month)
-            calendario.set(Calendar.DAY_OF_MONTH, day)
 
-            actualizarFecha(calendario)
-        }
+        val calendario = Calendar.getInstance()
+        val year = calendario.get(Calendar.YEAR)
+        val month = calendario.get(Calendar.MONTH)
+        val day = calendario.get(Calendar.DAY_OF_MONTH)
 
         binding.buttoncalendario.setOnClickListener {
-            DatePickerDialog(
-                this,
-                fecha,
-                calendario.get(Calendar.YEAR),
-                calendario.get(Calendar.MONTH),
-                calendario.get(Calendar.DAY_OF_MONTH)
-            ).show()
+            val datePickerDialog =
+                DatePickerDialog(this, { _, selectedYear, selectedMonth, selectedDay ->
+                    val edad = calcularEdad(selectedYear, selectedMonth, selectedDay)
+                    val edadselesccionada = "${selectedDay} / ${selectedMonth + 1} / ${selectedYear}"
+                    binding.textViewfecha.text = " $edadselesccionada "
+                    binding.textViewEdad.text = "$edad"
+                }, year, month, day)
+            datePickerDialog.show()
         }
     }
+    private fun calcularEdad(year: Int, month: Int, day: Int): Int {
+        val saberedad = Calendar.getInstance()
+        saberedad.set(year, month, day)
+        val today = Calendar.getInstance()
+        var edadP = today.get(Calendar.YEAR) - saberedad.get(Calendar.YEAR)
 
-
-    private fun actualizarFecha (calendar: Calendar){
-        val formatofecha = "dd-MM-yyyy"
-        val formatosimple = SimpleDateFormat(formatofecha, Locale.ENGLISH)
-        binding.textViewfecha.text = formatosimple.format(calendar.time)
-
+        if (today.get(Calendar.DAY_OF_YEAR) < saberedad.get(Calendar.DAY_OF_YEAR)) {
+            edadP--
+        }
+        return edadP
     }
+
 }
+
+
+
+
+
