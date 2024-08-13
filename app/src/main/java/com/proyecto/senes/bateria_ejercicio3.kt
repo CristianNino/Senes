@@ -39,12 +39,14 @@ class bateria_ejercicio3 : AppCompatActivity() {
                 val vr2 = intent.getStringExtra("keyeje2")
                 val vr3 = intent.getStringExtra("key3")
                 val vr4 = intent.getStringExtra("key4")
+                val id = intent.getStringExtra("id6")
 
                 val intent = Intent(this, resultado::class.java).apply {
                     putExtra("keyejercicio1", vr1)
                     putExtra("keyejercicio2", vr2)
                     putExtra("keyejercicio3", vr3)
                     putExtra("keyejercicio4", vr4)
+                    putExtra("id7", id)
                     putExtra("key5", puntuacion1)
                     putExtra("key6", puntuacion2)
                 }

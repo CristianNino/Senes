@@ -29,6 +29,7 @@ class bateria_ejercicio1 : AppCompatActivity() {
 
             val puntuacion1 =binding.editTexta1.text.toString().trim()
             val puntuacion2 =binding.editTexta2.text.toString().trim()
+            val id = intent.getStringExtra("id4")
 
             if(puntuacion1.isEmpty()){
                 binding.editTexta1.error = "Ingrese la puntuacion"
@@ -39,6 +40,7 @@ class bateria_ejercicio1 : AppCompatActivity() {
             }else{
 
                 val intent2 = Intent(this, bateria_ejercicio2::class.java).apply {
+                    putExtra("id5", id)
                     putExtra("key1", puntuacion1)
                     putExtra("key2", puntuacion2)
                 }

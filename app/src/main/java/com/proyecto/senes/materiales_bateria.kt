@@ -25,7 +25,10 @@ class materiales_bateria : AppCompatActivity() {
 
     }
     private fun navigateToSegir() {
-        val intent = Intent(this, descripcion_bateria::class.java)
+        val id = intent.getStringExtra("id2")
+        val intent = Intent(this, descripcion_bateria::class.java).apply {
+            putExtra("id3", id)
+        }
         startActivity(intent)}
     private fun navigateToatras() {
         val intent = Intent(this, info_bateria::class.java)

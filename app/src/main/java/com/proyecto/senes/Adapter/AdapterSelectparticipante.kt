@@ -63,7 +63,11 @@ class AdapterSelectparticipante (private val listaselectparticipantes: ArrayList
                     database.child("Participantes").child("$userId").updateChildren(nuevodato)
                         .addOnSuccessListener {
 
-                            val intent = Intent(context, info_bateria::class.java)
+
+                            val intent = Intent(context, info_bateria::class.java).apply {
+                                putExtra("id1", userId)
+
+                            }
                             context.startActivity(intent)
                             Toast.makeText(context, "Dato agregado", Toast.LENGTH_SHORT).show()
                         }

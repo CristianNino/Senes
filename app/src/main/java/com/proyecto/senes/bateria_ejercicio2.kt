@@ -24,7 +24,7 @@ class bateria_ejercicio2 : AppCompatActivity() {
         val btnseguir = findViewById<ImageButton>(R.id.imageButtonseguir2)
 
         btnseguir.setOnClickListener {
-            var puntuacion1 =binding.editTexta3.text.toString().trim()
+            val puntuacion1 =binding.editTexta3.text.toString().trim()
             val puntuacion2 =binding.editTexta4.text.toString().trim()
 
             if(puntuacion1.isEmpty()){
@@ -33,19 +33,30 @@ class bateria_ejercicio2 : AppCompatActivity() {
             }else if (puntuacion2.isEmpty()){
                 binding.editTexta4.error = "Ingrese la puntuacion"
                 binding.editTexta4.requestFocus()
-            }else{
+            }
+             else{
+                try {
+                    val number  = puntuacion1.toDouble()
+                    val number1  = puntuacion2.toDouble()
+                    val vr1 = intent.getStringExtra("key1")
+                    val vr2 = intent.getStringExtra("key2")
+                    val id = intent.getStringExtra("id5")
 
-                val vr1 = intent.getStringExtra("key1")
-                val vr2 = intent.getStringExtra("key2")
-
-                val intent3 = Intent(this, bateria_ejercicio3::class.java).apply {
-                    putExtra("keyeje1", vr1)
-                    putExtra("keyeje2", vr2)
-                    putExtra("key3", puntuacion1)
-                    putExtra("key4", puntuacion2)
+                    val intent3 = Intent(this, bateria_ejercicio3::class.java).apply {
+                        putExtra("keyeje1", vr1)
+                        putExtra("keyeje2", vr2)
+                        putExtra("id6", id)
+                        putExtra("key3", puntuacion1)
+                        putExtra("key4", puntuacion2)
+                    }
+                    startActivity(intent3)
+                }catch (e: NumberFormatException){
+                    binding.editTexta3.error = "Valor Incorrecto"
+                    binding.editTexta3.requestFocus()
+                    binding.editTexta4.error = "Valor Incorrecto"
+                    binding.editTexta4.requestFocus()
                 }
 
-                startActivity(intent3)
             }
         }
         btnstras.setOnClickListener {

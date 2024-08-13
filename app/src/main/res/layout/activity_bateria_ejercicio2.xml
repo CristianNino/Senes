@@ -25,6 +25,7 @@
         android:layout_height="64dp"
         android:text="Test de juntar las manos tras la espalda (Back Scratch Test) Objetivo: Evaluar la flexibilidad del tren superior (principalmente de hombros)"
         android:textSize="15dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +65,7 @@
         android:inputType="text"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -80,6 +82,7 @@
         android:inputType="text"
         android:textColor="@color/black"
         android:textSize="15sp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

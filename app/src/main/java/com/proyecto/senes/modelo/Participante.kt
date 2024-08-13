@@ -7,5 +7,6 @@ data class Participante(
     val sexo: String? = null,
     val nacimiento : String? = null,
     val edad : String? = null,
-    val patologia: String? = null
+    val patologia: String? = null,
+    val bateria : String? = null
 )
