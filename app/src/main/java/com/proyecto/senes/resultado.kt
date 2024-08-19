@@ -71,8 +71,5 @@ class resultado : AppCompatActivity() {
         atras.setOnClickListener {
             val intent = Intent(this, bateria_ejercicio1::class.java)
         }
-
-
     }
-
 }
