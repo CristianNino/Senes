@@ -221,7 +221,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageresultadoseguir"
         android:layout_width="62dp"
         android:layout_height="62dp"
         android:layout_marginEnd="140dp"
@@ -231,13 +231,13 @@
         app:srcCompat="@mipmap/seguir" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imageresultadoatras"
         android:layout_width="66dp"
         android:layout_height="62dp"
         android:layout_marginStart="140dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/imageresultadoseguir"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/regresar" />

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".recomendaciones"
+            android:exported="false" />
+        <activity
             android:name=".select_participante"
             android:exported="false" />
         <activity

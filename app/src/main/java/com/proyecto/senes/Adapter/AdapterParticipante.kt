@@ -13,27 +13,23 @@ class AdapterParticipante(private val listaparticipantes: ArrayList<Participante
 
 
     class ViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
-
         val nombre : TextView = itemView.findViewById(R.id.textViewNombrepart)
         val apellido : TextView = itemView.findViewById(R.id.textViewApellidopart)
-        val bateria : TextView = itemView.findViewById(R.id.textViewBateria)
-    }
 
+
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterParticipante.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.participantebat,
             parent, false)
         return  ViewHolder(view)
     }
-
     override fun getItemCount(): Int {
-        return listaparticipantes.size
-    }
+        return listaparticipantes.size}
 
     override fun onBindViewHolder(holder: AdapterParticipante.ViewHolder, position: Int) {
         val participante = listaparticipantes[position]
 
         holder.nombre.text = participante.nombres
         holder.apellido.text = participante.apellidos
-        holder.bateria.text = participante.bateria
     }
 }

@@ -24,8 +24,9 @@ class bateria_ejercicio2 : AppCompatActivity() {
         val btnseguir = findViewById<ImageButton>(R.id.imageButtonseguir2)
 
         btnseguir.setOnClickListener {
-            val puntuacion1 =binding.editTexta3.text.toString().trim()
+            var puntuacion1 =binding.editTexta3.text.toString().trim()
             val puntuacion2 =binding.editTexta4.text.toString().trim()
+
 
             if(puntuacion1.isEmpty()){
                 binding.editTexta3.error = "Ingrese la puntuacion"
@@ -33,8 +34,7 @@ class bateria_ejercicio2 : AppCompatActivity() {
             }else if (puntuacion2.isEmpty()){
                 binding.editTexta4.error = "Ingrese la puntuacion"
                 binding.editTexta4.requestFocus()
-            }
-             else{
+            }else{
                 try {
                     val number  = puntuacion1.toDouble()
                     val number1  = puntuacion2.toDouble()
@@ -56,7 +56,6 @@ class bateria_ejercicio2 : AppCompatActivity() {
                     binding.editTexta4.error = "Valor Incorrecto"
                     binding.editTexta4.requestFocus()
                 }
-
             }
         }
         btnstras.setOnClickListener {
