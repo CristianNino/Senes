@@ -53,6 +53,7 @@ class registro_participante : AppCompatActivity() {
             val sexo = binding.autoCompleteTextsexo.text.toString().trim()
             val nacimiento = binding.textViewfecha.text.toString().trim()
             val patologia = binding.editTextPatologia.text.toString().trim()
+            val edad = binding.textViewEdad.text.toString().trim()
 
             if (nombres.isEmpty()){
                 binding.editTextNombres.error = "Ingrese los nombres"
@@ -76,11 +77,10 @@ class registro_participante : AppCompatActivity() {
 
 
                 val id = references.child("Participantes").push().key
-
-                val participantem = Participante (id, nombres, apellidos,sexo,nacimiento,patologia)
+                val participantem = Participante (id, nombres, apellidos,sexo,nacimiento,patologia,edad)
 
                 references.child(id!!)
-                    .setValue(participantem)
+                    .setValue(participantem, edad)
                     .addOnSuccessListener {
                         progressDialog.dismiss()
                         startActivity(Intent(this, menu::class.java))
@@ -112,30 +112,32 @@ class registro_participante : AppCompatActivity() {
 
     private fun calendariofecha() {
         val calendario = Calendar.getInstance()
-        val fecha = DatePickerDialog.OnDateSetListener{view: DatePicker?, year: Int, month: Int, day: Int ->
-            calendario.set(Calendar.YEAR, year)
-            calendario.set(Calendar.MONTH, month)
-            calendario.set(Calendar.DAY_OF_MONTH, day)
 
-            actualizarFecha(calendario)
-        }
+        val year = calendario.get(Calendar.YEAR)
+        val month = calendario.get(Calendar.MONTH)
+        val day = calendario.get(Calendar.DAY_OF_MONTH)
 
         binding.buttoncalendario.setOnClickListener {
-            DatePickerDialog(
-                this,
-                fecha,
-                calendario.get(Calendar.YEAR),
-                calendario.get(Calendar.MONTH),
-                calendario.get(Calendar.DAY_OF_MONTH)
-            ).show()
+            val datePickerDialog =
+                DatePickerDialog(this, { _, selectedYear, selectedMonth, selectedDay ->
+                    val edad = calcularEdad(selectedYear, selectedMonth, selectedDay)
+                    val edadselesccionada = "${selectedDay} / ${selectedMonth + 1} / ${selectedYear}"
+                    binding.textViewfecha.text = " $edadselesccionada "
+                    binding.textViewEdad.text = "$edad"
+                }, year, month, day)
+            datePickerDialog.show()
         }
     }
+    private fun calcularEdad(year: Int, month: Int, day: Int): Int {
+        val saberedad = Calendar.getInstance()
+        saberedad.set(year, month, day)
+        val today = Calendar.getInstance()
+        var edadP = today.get(Calendar.YEAR) - saberedad.get(Calendar.YEAR)
 
-
-    private fun actualizarFecha (calendar: Calendar){
-        val formatofecha = "dd-MM-yyyy"
-        val formatosimple = SimpleDateFormat(formatofecha, Locale.ENGLISH)
-        binding.textViewfecha.text = formatosimple.format(calendar.time)
-
+        if (today.get(Calendar.DAY_OF_YEAR) < saberedad.get(Calendar.DAY_OF_YEAR)) {
+            edadP--
+        }
+        return edadP
     }
 }
+
