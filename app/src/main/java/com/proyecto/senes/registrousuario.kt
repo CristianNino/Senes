@@ -4,8 +4,10 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -38,9 +40,11 @@ class registrousuario : AppCompatActivity() {
             validarInformacion()
         }
     }
+
     private var Rcorreo = ""
     private var Rcontraseña = ""
     private var Rconfirmar = ""
+
 
     private fun validarInformacion() {
 
@@ -51,16 +55,26 @@ class registrousuario : AppCompatActivity() {
         if (Rcorreo.isEmpty()) {
             binding.TextRcorreo.error = "Ingrese correo"
             binding.TextRcorreo.requestFocus()
-        }else if (!Patterns.EMAIL_ADDRESS.matcher(Rcorreo).matches()) {
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(Rcorreo).matches()) {
             binding.TextRcorreo.error = "Correo no válido"
             binding.TextRcorreo.requestFocus()
         } else if (Rcontraseña.isEmpty()) {
             binding.TextRcontraseA.error = "Ingrese contraseña"
             binding.TextRcontraseA.requestFocus()
-        }else if (Rcontraseña.length < 6) {
+        } else if (Rcontraseña.length < 6) {
             binding.TextRcontraseA.error = "Necesita 6 o mas caracteres"
             binding.TextRcontraseA.requestFocus()
-        }else if (Rconfirmar.isEmpty()) {
+        } else if (!binding.TextRcontraseA.validateInput()) {
+            binding.TextRcontraseA.error = "La contraseña no cumple con los requisitos"
+            binding.TextRcontraseA.requestFocus()
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Advertencia")
+            builder.setMessage("La contraseña debe contener al menos:\nTener al menos una Mayuscula.\n" +
+                    "Tener un caracter Especial (*, +, -, ! etc).\nTener al menos un munero.")
+            builder.setPositiveButton("Aceptar", null)
+            val Dialogo: AlertDialog = builder.create()
+            Dialogo.show()
+        } else if (Rconfirmar.isEmpty()) {
             binding.TextRconfirmar.error = "Confirme contraseña"
             binding.TextRconfirmar.requestFocus()
         } else if (Rcontraseña != Rconfirmar) {
@@ -70,6 +84,7 @@ class registrousuario : AppCompatActivity() {
             RegistrarUsuario()
         }
     }
+
     private fun RegistrarUsuario() {
         progressDialog.setMessage("Creando usuario")
         progressDialog.show()
@@ -78,14 +93,14 @@ class registrousuario : AppCompatActivity() {
             .addOnSuccessListener(this) {
                 insertarInfoBD()
             }
-                .addOnFailureListener { e ->
-                    Toast.makeText(
-                        this,
-                        "Fallo el registro debibo a ${e.message}",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-        }
+            .addOnFailureListener { e ->
+                Toast.makeText(
+                    this,
+                    "Fallo el registro debibo a ${e.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+    }
 
     private fun insertarInfoBD() {
         progressDialog.setMessage("Guardando Información...")
@@ -114,6 +129,14 @@ class registrousuario : AppCompatActivity() {
                     "Fallo el registro en BD debibo a ${e.message}",
                     Toast.LENGTH_SHORT
                 ).show()
-                }
-        }
+            }
     }
+    fun EditText.validateInput(): Boolean {
+        val input = this.text.toString()
+        val hasUpperCase = input.any { it.isUpperCase() }
+        val hasSpecialCharacter = input.any { it.isLetterOrDigit().not() }
+        val hasNumber = input.any { it.isDigit() }
+        val hasMinimumLength = input.length >= 8
+        return hasUpperCase && hasSpecialCharacter && hasNumber && hasMinimumLength
+    }
+}
