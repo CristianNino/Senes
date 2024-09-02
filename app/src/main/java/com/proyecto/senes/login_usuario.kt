@@ -69,7 +69,7 @@ class login_usuario : AppCompatActivity() {
         firebaseAuth.signInWithEmailAndPassword(email, pass)
             .addOnSuccessListener {
                 progressDialog.dismiss()
-                startActivity(Intent(this, menu::class.java))
+                startActivity(Intent(this, licencias::class.java))
                 finishAffinity()
                 Toast.makeText( this,
                     "Bienvenido",

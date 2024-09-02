@@ -5,16 +5,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20sp"
+    android:background="@color/principal"
         tools:context=".registro_participante">
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Participante"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:text="Participante"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewNombrepart"
@@ -22,6 +24,7 @@
             android:layout_height="34dp"
             android:layout_marginTop="20dp"
             android:text="Nombres"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="20sp" />
 
@@ -30,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:text="Apellidos"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="20sp" />
         <TextView
@@ -37,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:text="Bateria"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="20sp" />
 

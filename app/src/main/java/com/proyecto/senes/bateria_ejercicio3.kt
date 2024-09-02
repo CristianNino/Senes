@@ -58,7 +58,7 @@ class bateria_ejercicio3 : AppCompatActivity() {
         }
     }
     private fun navigateToatras() {
-        val intent = Intent(this, bateria_ejercicio2::class.java)
+        val intent = Intent(this, bateria_ejercicio1::class.java)
         startActivity(intent)}
 }
 

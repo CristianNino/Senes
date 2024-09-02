@@ -26,18 +26,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@mipmap/img1_log" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="413dp"
-        android:layout_height="879dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@mipmap/img2_log" />
-
     <Button
         android:id="@+id/buttonlogin"
         android:layout_width="135dp"
@@ -68,39 +56,53 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.658" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="230dp"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="413dp"
+        android:layout_height="879dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.433">
+        app:srcCompat="@mipmap/img2_log" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="200dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.520"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Textemail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="49dp"
+            android:backgroundTint="@color/white"
             android:hint="Correo electronico" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="244dp"
-        android:layout_height="61dp"
+        android:layout_height="66dp"
         app:endIconMode="password_toggle"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.688"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54">
+        app:layout_constraintVertical_bias="0.549">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Textpass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparente"
             android:hint="Contraseña" />
     </com.google.android.material.textfield.TextInputLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

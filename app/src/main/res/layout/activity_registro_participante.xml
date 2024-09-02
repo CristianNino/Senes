@@ -96,6 +96,7 @@
         android:layout_marginTop="76dp"
         android:text="Datos nuevo participante"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,6 +112,8 @@
         android:hint="Nombres"
         android:inputType="text"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/transparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -125,6 +128,8 @@
         android:hint="Apellidos"
         android:inputType="text"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/transparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -147,6 +152,7 @@
             android:layout_height="37dp"
             android:layout_weight="1"
             android:text="Fecha de nacimiento"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
         <Button
@@ -154,6 +160,7 @@
             android:layout_width="142dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/white"
             android:background="@drawable/botones_forma"
             android:text="selecciona fecha" />
 
@@ -168,6 +175,8 @@
         android:hint="Patologia"
         android:inputType="text"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/transparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -206,6 +215,9 @@
         android:inputType="none"
         android:hint="Sexo"
         android:completionThreshold="1"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/transparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.78"
