@@ -2,6 +2,7 @@ package com.proyecto.senes
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -23,7 +24,7 @@ class resultado : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContentView(R.layout.activity_resultado)
 
         val valorR1 = intent.getStringExtra("keyejercicio1")
@@ -80,6 +81,7 @@ class resultado : AppCompatActivity() {
         }
         atras.setOnClickListener {
             val intent = Intent(this, bateria_ejercicio1::class.java)
+            startActivity(intent)
         }
     }
 }

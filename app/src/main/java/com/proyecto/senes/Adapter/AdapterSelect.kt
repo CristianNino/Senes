@@ -63,7 +63,7 @@ class AdapterSelect (private val Listaselect: ArrayList<Participante>):
                             context.startActivity(intent)
                             Toast.makeText(context, "Dato agregado", Toast.LENGTH_SHORT).show()
                         }
-                        .addOnSuccessListener {
+                        .addOnFailureListener {
                             Toast.makeText(context, "Error al agregar el dato", Toast.LENGTH_SHORT).show()
                         }
                 }else{

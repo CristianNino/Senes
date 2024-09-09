@@ -8,55 +8,53 @@
     android:background="@color/white"
     tools:context=".resultado">
 
+
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-40dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.048"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@mipmap/tabla_resul" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="64dp"
         android:text="Resultado"
         android:textColor="@color/principal"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView13" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
-        android:layout_marginBottom="20dp"
         android:text="Ejecicio"
-
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView15"
         app:layout_constraintEnd_toStartOf="@+id/textView13"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView13"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
         android:text="Puntuacion"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -65,14 +63,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView13"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.638" />
 
     <TextView
         android:id="@+id/textViewpun1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
         android:text="Resultado"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -81,15 +78,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toTopOf="@+id/imageView13"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.644" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="44dp"
         android:text="Chair stand test"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -101,7 +98,7 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="40dp"
         android:text="Arm curl test"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -112,11 +109,11 @@
         android:id="@+id/textView17"
         android:layout_width="100dp"
         android:layout_height="80dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="30dp"
         android:text="Chair-Sit and Reach-Test"
-        android:textSize="20sp"
         android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView18"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -125,10 +122,10 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="40dp"
         android:text="Back Scratch Test"
-        android:textSize="20sp"
         android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -150,7 +147,7 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="80dp"
         android:text="2-minute step test"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -161,13 +158,13 @@
         android:id="@+id/textpa1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="72dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textViewarm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -176,50 +173,50 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:text="TextView"
-        android:textSize="20sp"
         android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textpa4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="177dp" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textpa4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
-        android:text="TextView"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/textpa5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="177dp" />
-
-    <TextView
-        android:id="@+id/textpa5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textpa5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textpa5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textpa6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textpa6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="90dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
@@ -248,21 +245,21 @@
         android:id="@+id/textViewarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="68dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textpa3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewRes1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="72dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -274,7 +271,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="35dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="70dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -285,8 +282,8 @@
         android:id="@+id/textViewRes3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="70dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -297,8 +294,8 @@
         android:id="@+id/textViewRes4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="70dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -310,7 +307,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="35dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="60dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -321,13 +318,29 @@
         android:id="@+id/textViewRes6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="90dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewGen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

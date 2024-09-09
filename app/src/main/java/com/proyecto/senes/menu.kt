@@ -2,7 +2,6 @@ package com.proyecto.senes
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +18,7 @@ class menu : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val btnprocedimientos = findViewById<ImageButton>(R.id.imageButton11)
         val btnnuevo = findViewById<ImageButton>(R.id.imageButtonnuevo)
         val btnparticipante = findViewById<ImageButton>(R.id.imageButtonparticipante)
         val btnbaterias = findViewById<ImageButton>(R.id.imageButtonbaterias)
@@ -32,6 +32,10 @@ class menu : AppCompatActivity() {
         btnbaterias.setOnClickListener {
             navigateToBaterias()
         }
+        btnprocedimientos.setOnClickListener {
+            val x = Intent(this, procedimientos::class.java)
+            startActivity(x)
+        }
     }
     private fun navigateToNuevo() {
         val intent = Intent(this, registro_participante::class.java)
@@ -42,5 +46,4 @@ class menu : AppCompatActivity() {
     private fun navigateToBaterias() {
         val intent = Intent(this, mis_baterias::class.java)
         startActivity(intent)}
-
 }

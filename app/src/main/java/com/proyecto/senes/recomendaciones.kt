@@ -1,6 +1,8 @@
 package com.proyecto.senes
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +28,7 @@ class recomendaciones : AppCompatActivity() {
         val database = FirebaseDatabase.getInstance().getReference()
         val textrecomendacion = findViewById<TextView>(R.id.textViewrecomendacion)
         val textespecificacion = findViewById<TextView>(R.id.textViewespecificacion)
-
+        val sigue = findViewById<ImageButton>(R.id.imageButtonmsigue)
 
         database.child("Recomendaciones").child("Bajo_hombre").child("recomendacion").addValueEventListener(
             object : ValueEventListener {
@@ -51,5 +53,13 @@ class recomendaciones : AppCompatActivity() {
                 }
             }
         )
+
+        sigue.setOnClickListener {
+            val intent = Intent(this, ejercicios::class.java)
+            startActivity(intent)
+        }
+
+        }
+
+
     }
-}
