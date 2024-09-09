@@ -15,10 +15,25 @@
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".ejercicio_flexibilidad"
+            android:exported="false" />
+        <activity
+            android:name=".ejercicio_cardiovascular"
+            android:exported="false" />
+        <activity
+            android:name=".ejercicio_equilibrio"
+            android:exported="false" />
+        <activity
+            android:name=".ejercicio_fuerza"
+            android:exported="false" />
+        <activity
+            android:name=".ejercicios"
+            android:exported="false" />
+        <activity
             android:name=".licencias"
             android:exported="false" />
         <activity
-            android:name=".recomendaciones"
+            android:name=".menu"
             android:exported="false" />
         <activity
             android:name=".select_participante"
@@ -28,7 +43,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -61,7 +75,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -69,7 +82,7 @@
             android:name=".mis_baterias"
             android:exported="true" />
         <activity
-            android:name=".menu"
+            android:name=".recomendaciones"
             android:exported="false" />
         <activity
             android:name=".tyc"
