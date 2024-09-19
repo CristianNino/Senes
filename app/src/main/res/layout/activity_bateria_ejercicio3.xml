@@ -36,8 +36,8 @@
     <TextView
         android:id="@+id/sextotexto"
         android:layout_width="349dp"
-        android:layout_height="23dp"
-        android:text="Objetivo: Evaluar la agilidad y el equilibrio dinámico."
+        android:layout_height="60dp"
+        android:text="Objetivo: Evaluar la agilidad y el equilibrio dinámico. \nTiempo que se demora en levantarse, desplazarse y volverse a sentar en segundos"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,8 +49,8 @@
     <TextView
         android:id="@+id/octavotexto"
         android:layout_width="348dp"
-        android:layout_height="22dp"
-        android:text="Objetivo: Evaluación de la resistencia aeróbica."
+        android:layout_height="40dp"
+        android:text="Objetivo: Evaluación de la resistencia aeróbica. \nContar la cantidad de ciclos "
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -145,10 +145,10 @@
         android:layout_height="130dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204"
+        app:layout_constraintVertical_bias="0.239"
         app:srcCompat="@mipmap/ejercicio5" />
 
     <ImageView

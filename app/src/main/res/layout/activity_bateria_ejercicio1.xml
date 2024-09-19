@@ -89,9 +89,9 @@
 
     <TextView
         android:id="@+id/primertexto"
-        android:layout_width="354dp"
-        android:layout_height="42dp"
-        android:text="Sentarse y levantarse de una silla (Chair Stand Test) Objetivo: Evaluar la fuerza del tren inferior."
+        android:layout_width="385dp"
+        android:layout_height="65dp"
+        android:text="Sentarse y levantarse de una silla (Chair Stand Test) Objetivo: Evaluar la  fuerza del tren inferior. \n Cuenta la cantidad de repeticiones en 30 segundos."
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,8 +103,8 @@
     <TextView
         android:id="@+id/segundotexto"
         android:layout_width="354dp"
-        android:layout_height="42dp"
-        android:text="Flexiones del brazo (Arm Curl Test) Objetivo: Evaluar la fuerza del tren superior."
+        android:layout_height="60dp"
+        android:text="Flexiones del brazo (Arm Curl Test) Objetivo: Evaluar la fuerza del tren superior. \n Cuenta la cantidad de repeticiones en 30 segundos."
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +120,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191"
+        app:layout_constraintVertical_bias="0.218"
         app:srcCompat="@mipmap/ejercicio1" />
 
     <ImageView
