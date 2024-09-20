@@ -33,13 +33,13 @@
             android:name=".licencias"
             android:exported="false" />
         <activity
-            android:name=".menu"
+            android:name=".prueba"
             android:exported="false" />
         <activity
             android:name=".select_participante"
             android:exported="false" />
         <activity
-            android:name=".prueba"
+            android:name=".menu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,12 +72,7 @@
             android:exported="false" />
         <activity
             android:name=".login_usuario"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".mis_baterias"
             android:exported="true" />
@@ -94,6 +89,21 @@
             android:name=".miparticipante"
             android:exported="true"
             android:label="@string/title_activity_prueba" />
+        <activity
+            android:name=".procedimientos"
+            android:exported="false" />
+        <activity
+            android:name=".consideraciones"
+            android:exported="false" />
+        <activity
+            android:name=".Previas"
+            android:exported="false" />
+        <activity
+            android:name=".durante"
+            android:exported="false" />
+        <activity
+            android:name=".durante_2"
+            android:exported="false" />
     </application>
 
 </manifest>
