@@ -2,6 +2,7 @@ package com.proyecto.senes
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -58,7 +59,7 @@ class select_participante : AppCompatActivity() {
                 }
             }
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Log.e("Firebase", "Error: ${error.message}")
             }
         })
     }

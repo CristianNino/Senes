@@ -1,5 +1,7 @@
 [versions]
 agp = "8.5.1"
+commonsCollections4 = "4.4"
+jxl = "2.6.12"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -18,9 +20,12 @@ activity = "1.9.1"
 googleServiceV = "4.4.2"
 firebaseAuthV = "23.0.0"
 firebaseDatabaseV = "21.0.0"
+poi = "5.2.3"
+poiOoxml = "5.2.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+commons-collections4 = { module = "org.apache.commons:commons-collections4", version.ref = "commonsCollections4" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -35,6 +40,7 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+jxl = { module = "net.sourceforge.jexcelapi:jxl", version.ref = "jxl" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
@@ -43,6 +49,8 @@ androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifec
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 firebaseAuth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuthV" }
 firebaseDatabase = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabaseV" }
+poi = { module = "org.apache.poi:poi", version.ref = "poi" }
+poi-ooxml = { module = "org.apache.poi:poi-ooxml", version.ref = "poiOoxml" }
 
 
 [plugins]

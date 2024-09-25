@@ -141,6 +141,13 @@ class resultado : AppCompatActivity() {
             gene == "Femenino" && ages in 80..84 && valorR1 in 8..15 -> "funcional"
             gene == "Femenino" && ages in 85..89 && valorR1 in 7..14 -> "funcional"
             gene == "Femenino" && ages in 90..94 && valorR1 in 3..12 -> "funcional"
+            gene == "Masculino" && ages in 60..64 && valorR1 in 13..20 -> "funcional"
+            gene == "Masculino" && ages in 65..69 && valorR1 in 11..19 -> "funcional"
+            gene == "Masculino" && ages in 70..74 && valorR1 in 11..18 -> "funcional"
+            gene == "Masculino" && ages in 75..79 && valorR1 in 10..18 -> "funcional"
+            gene == "Masculino" && ages in 80..84 && valorR1 in 9..16 -> "funcional"
+            gene == "Masculino" && ages in 85..89 && valorR1 in 7..15 -> "funcional"
+            gene == "Masculino" && ages in 90..94 && valorR1 in 6..13 -> "funcional"
             else -> "no funcional"
         }
 
@@ -152,6 +159,13 @@ class resultado : AppCompatActivity() {
             gene == "Femenino" && ages in 80..84 && valorR2 in 9..17 -> "funcional"
             gene == "Femenino" && ages in 85..89 && valorR2 in 9..16 -> "funcional"
             gene == "Femenino" && ages in 90..94 && valorR2 in 7..14 -> "funcional"
+            gene == "Masculino" && ages in 60..64 && valorR2 in 15..23 -> "funcional"
+            gene == "Masculino" && ages in 65..69 && valorR2 in 14..22 -> "funcional"
+            gene == "Masculino" && ages in 70..74 && valorR2 in 13..22 -> "funcional"
+            gene == "Masculino" && ages in 75..79 && valorR2 in 12..20 -> "funcional"
+            gene == "Masculino" && ages in 80..84 && valorR2 in 12..20 -> "funcional"
+            gene == "Masculino" && ages in 85..89 && valorR2 in 10..18 -> "funcional"
+            gene == "Masculino" && ages in 90..94 && valorR2 in 9..15 -> "funcional"
             else -> "no funcional"
         }
 
@@ -163,6 +177,13 @@ class resultado : AppCompatActivity() {
             gene == "Femenino" && ages in 80..84 && valorR3 in -1.9..3.1 -> "funcional"
             gene == "Femenino" && ages in 85..89 && valorR3 in -2.4..2.6 -> "funcional"
             gene == "Femenino" && ages in 90..94 && valorR3 in -4.4..1.1 -> "funcional"
+            gene == "Masculino" && ages in 60..64 && valorR3 in -2.4..4.1 -> "funcional"
+            gene == "Masculino" && ages in 65..69 && valorR3 in -2.9..3.1 -> "funcional"
+            gene == "Masculino" && ages in 70..74 && valorR3 in -2.9..3.1 -> "funcional"
+            gene == "Masculino" && ages in 75..79 && valorR3 in -3.9..2.1 -> "funcional"
+            gene == "Masculino" && ages in 80..84 && valorR3 in -5.4..1.6 -> "funcional"
+            gene == "Masculino" && ages in 85..89 && valorR3 in -5.4..0.4 -> "funcional"
+            gene == "Masculino" && ages in 90..94 && valorR3 in -6.4..0.6 -> "funcional"
             else -> "no funcional"
         }
 
@@ -174,6 +195,13 @@ class resultado : AppCompatActivity() {
             gene == "Femenino" && ages in 80..84 && valorR4 in -5.6..0.1 -> "funcional"
             gene == "Femenino" && ages in 85..89 && valorR4 in -7.1..-0.9 -> "funcional"
             gene == "Femenino" && ages in 90..94 && valorR4 in -8.1..-0.9 -> "funcional"
+            gene == "Masculino" && ages in 60..64 && valorR4 in -6.4..0.1 -> "funcional"
+            gene == "Masculino" && ages in 65..69 && valorR4 in -7.4..1.1 -> "funcional"
+            gene == "Masculino" && ages in 70..74 && valorR4 in -7.9..1.1 -> "funcional"
+            gene == "Masculino" && ages in 75..79 && valorR4 in -8.9..2.1 -> "funcional"
+            gene == "Masculino" && ages in 80..84 && valorR4 in -9.4..2.1 -> "funcional"
+            gene == "Masculino" && ages in 85..89 && valorR4 in -9.4..-3.1 -> "funcional"
+            gene == "Masculino" && ages in 90..94 && valorR4 in -10.4..-4.1 -> "funcional"
             else -> "no funcional"
         }
 
@@ -185,6 +213,13 @@ class resultado : AppCompatActivity() {
             gene == "Femenino" && ages in 80..84 && valorR5 in 5.8..8.6 -> "funcional"
             gene == "Femenino" && ages in 85..89 && valorR5 in 6.3..9.5 -> "funcional"
             gene == "Femenino" && ages in 90..94 && valorR5 in 7.4..11.4 -> "funcional"
+            gene == "Masculino" && ages in 60..64 && valorR5 in 3.9..5.5 -> "funcional"
+            gene == "Masculino" && ages in 65..69 && valorR5 in 4.4..5.8 -> "funcional"
+            gene == "Masculino" && ages in 70..74 && valorR5 in 4.5..6.1 -> "funcional"
+            gene == "Masculino" && ages in 75..79 && valorR5 in 4.7..7.1 -> "funcional"
+            gene == "Masculino" && ages in 80..84 && valorR5 in 5.3..7.5 -> "funcional"
+            gene == "Masculino" && ages in 85..89 && valorR5 in 5.6..8.8 -> "funcional"
+            gene == "Masculino" && ages in 90..94 && valorR5 in 6.3..9.0 -> "funcional"
             else -> "no funcional"
         }
 
@@ -196,6 +231,13 @@ class resultado : AppCompatActivity() {
             gene == "Femenino" && ages in 80..84 && valorR6 in 59..91 -> "funcional"
             gene == "Femenino" && ages in 85..89 && valorR6 in 54..86 -> "funcional"
             gene == "Femenino" && ages in 90..94 && valorR6 in 43..73 -> "funcional"
+            gene == "Masculino" && ages in 60..64 && valorR6 in 86..116 -> "funcional"
+            gene == "Masculino" && ages in 65..69 && valorR6 in 85..117 -> "funcional"
+            gene == "Masculino" && ages in 70..74 && valorR6 in 79..111 -> "funcional"
+            gene == "Masculino" && ages in 75..79 && valorR6 in 72..110 -> "funcional"
+            gene == "Masculino" && ages in 80..84 && valorR6 in 70..104 -> "funcional"
+            gene == "Masculino" && ages in 85..89 && valorR6 in 58..92 -> "funcional"
+            gene == "Masculino" && ages in 90..94 && valorR6 in 51..87 -> "funcional"
             else -> "no funcional"
         }
 

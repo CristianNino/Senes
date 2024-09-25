@@ -22,6 +22,7 @@ class menu : AppCompatActivity() {
         val btnnuevo = findViewById<ImageButton>(R.id.imageButtonnuevo)
         val btnparticipante = findViewById<ImageButton>(R.id.imageButtonparticipante)
         val btnbaterias = findViewById<ImageButton>(R.id.imageButtonbaterias)
+        val btnExcel = findViewById<ImageButton>(R.id.imageButtonExcel)
 
         btnnuevo.setOnClickListener {
             navigateToNuevo()
@@ -35,6 +36,10 @@ class menu : AppCompatActivity() {
         }
         btnbaterias.setOnClickListener {
             navigateToBaterias()
+        }
+        btnExcel.setOnClickListener {
+            val x = Intent(this, generarExcel::class.java)
+            startActivity(x)
         }
 
     }

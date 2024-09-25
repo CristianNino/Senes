@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:targetApi="31">
+        <activity
+            android:name=".generarExcel"
+            android:exported="false" />
         <activity
             android:name=".ejercicio_flexibilidad"
             android:exported="false" />
@@ -43,6 +50,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -72,7 +80,7 @@
             android:exported="false" />
         <activity
             android:name=".login_usuario"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".mis_baterias"
             android:exported="true" />

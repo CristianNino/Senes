@@ -2,6 +2,7 @@ package com.proyecto.senes
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -61,7 +62,7 @@ class miparticipante : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Log.w("Firebase", "Error al leer el valor.", error.toException())
             }
         })
     }
