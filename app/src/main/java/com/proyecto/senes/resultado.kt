@@ -3,20 +3,17 @@ package com.proyecto.senes
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.proyecto.senes.modelo.Puntuaciones
+import com.proyecto.senes.modelo.Resultado
 
 class resultado : AppCompatActivity() {
 
@@ -26,7 +23,6 @@ class resultado : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_resultado)
-
 
         val valorR1 = intent.getStringExtra("keyejercicio1")?.toIntOrNull() ?: 0
         val valorR2 = intent.getStringExtra("keyejercicio2")?.toIntOrNull() ?: 0
@@ -42,6 +38,12 @@ class resultado : AppCompatActivity() {
         val textActividad4 = findViewById<TextView>(R.id.textpa4)
         val textActividad5 = findViewById<TextView>(R.id.textpa5)
         val textActividad6 = findViewById<TextView>(R.id.textpa6)
+        val resultadoRes1TextView = findViewById<TextView>(R.id.textViewRes1)
+        val resultadoRes2TextView = findViewById<TextView>(R.id.textViewRes2)
+        val resultadoRes3TextView = findViewById<TextView>(R.id.textViewRes3)
+        val resultadoRes4TextView = findViewById<TextView>(R.id.textViewRes4)
+        val resultadoRes5TextView = findViewById<TextView>(R.id.textViewRes5)
+        val resultadoRes6TextView = findViewById<TextView>(R.id.textViewRes6)
         val seguir = findViewById<ImageButton>(R.id.imageresultadoseguir)
         val atras = findViewById<ImageButton>(R.id.imageresultadoatras)
 
@@ -79,22 +81,18 @@ class resultado : AppCompatActivity() {
         textActividad5.text = valorR5.toString()
         textActividad6.text = valorR6.toString()
 
-
-        Log.d("valores", "varlor1,valor2,valor3,valor4,valor5,valor6: $valorR1,$valorR2,$valorR3,$valorR4,$valorR5,$valorR6")
-        Log.d("pruebaaaaa", "resultado es: ${age?.plus(5)}")
-
-        // Calcula el resultado para cada puntuación
-
-
-
-
-
-
-
         seguir.setOnClickListener {
+
+            val puntua1 = resultadoRes1TextView.text.toString()
+            val puntua2 = resultadoRes2TextView.text.toString()
+            val puntua3 = resultadoRes3TextView.text.toString()
+            val puntua4 = resultadoRes4TextView.text.toString()
+            val puntua5 = resultadoRes5TextView.text.toString()
+            val puntua6 = resultadoRes6TextView.text.toString()
+
             database = FirebaseDatabase.getInstance().getReference("Puntuacion")
 
-            val idN = database.child("Puntuacion").push().key
+            var idN = database.child("Puntuacion").push().key
             val puntuacionP =
                 Puntuaciones(idN, idP, valorR1.toString(), valorR2.toString(), valorR3.toString(), valorR4.toString(), valorR5.toString(), valorR6.toString())
 
@@ -115,7 +113,36 @@ class resultado : AppCompatActivity() {
                     ).show()
                 }
 
-            val intent = Intent(this, recomendaciones::class.java)
+            val refere = FirebaseDatabase.getInstance().getReference("Resultados")
+            val resultadoP =
+                Resultado(idN, idP, puntua1, puntua2, puntua3, puntua4, puntua5, puntua6)
+
+            refere.child(idN)
+                .setValue(resultadoP)
+                .addOnSuccessListener {
+                    Toast.makeText(
+                        this,
+                        "el registro ha sido cargado",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(
+                        this,
+                        "fallo el registo en BD debido a ${e.message}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
+            val intent = Intent(this, recomendaciones::class.java).apply {
+                putExtra("key1", puntua1)
+                putExtra("key2", puntua2)
+                putExtra("key3", puntua3)
+                putExtra("key4", puntua4)
+                putExtra("key5", puntua5)
+                putExtra("key6", puntua6)
+                putExtra("Gen", gen)
+            }
             startActivity(intent)
         }
         atras.setOnClickListener {
@@ -148,7 +175,7 @@ class resultado : AppCompatActivity() {
             gene == "Masculino" && ages in 80..84 && valorR1 in 9..16 -> "funcional"
             gene == "Masculino" && ages in 85..89 && valorR1 in 7..15 -> "funcional"
             gene == "Masculino" && ages in 90..94 && valorR1 in 6..13 -> "funcional"
-            else -> "no funcional"
+                else -> "no funcional"
         }
 
         val resultadoR2 = when {

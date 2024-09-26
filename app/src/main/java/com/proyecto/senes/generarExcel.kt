@@ -36,7 +36,8 @@ class generarExcel : AppCompatActivity() {
         setContentView(binding.root)
 
         val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("Participantes")
+        val referencia1 = database.getReference("Participantes")
+
 
         /*solicitarPermisos = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()){
             val aceptados = it.all { it.value }
@@ -46,18 +47,15 @@ class generarExcel : AppCompatActivity() {
                 Toast.makeText(this, "No se aceptaron los permisos", Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
         permisos()*/
 
-        myRef.addValueEventListener(object : ValueEventListener {
+        referencia1.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val list = mutableListOf<Excel>()
                 for(snap in snapshot.children){
                     val user = snap.getValue(Excel::class.java)
                     if (user != null) {
-                        Log.d("FirebaseData", "Nombre: ${user.nombres}, Apellido: ${user.apellidos}, Edad: ${user.edades}, Genero: ${user.generos}")
+                        Log.d("FirebaseData", "Nombre: ${user.nombres}, Apellido: ${user.apellidos}, Edad: ${user.edadp}, Genero: ${user.sexo}")
                         list.add(user)
                     }
                 }
@@ -91,7 +89,7 @@ class generarExcel : AppCompatActivity() {
     private fun crearExcel(listaRegistros: List<Excel>){
         val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
 
-        val fileName = "AAd.xlsx"
+        val fileName = "AAaa.xlsx"
 
         // Crear un nuevo libro de trabajo Excel en formato .xlsx
         val workbook = XSSFWorkbook()
@@ -113,8 +111,8 @@ class generarExcel : AppCompatActivity() {
             val row = sheet.createRow(index + 1)
             row.createCell(0).setCellValue(data.nombres)
             row.createCell(1).setCellValue(data.apellidos)
-            row.createCell(2).setCellValue(data.edades)
-            row.createCell(3).setCellValue(data.generos)
+            row.createCell(2).setCellValue(data.edadp)
+            row.createCell(3).setCellValue(data.sexo)
         }
 
         // Guardar el libro de trabajo (workbook) en almacenamiento externo
