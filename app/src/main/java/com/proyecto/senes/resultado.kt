@@ -90,49 +90,10 @@ class resultado : AppCompatActivity() {
             val puntua5 = resultadoRes5TextView.text.toString()
             val puntua6 = resultadoRes6TextView.text.toString()
 
-            database = FirebaseDatabase.getInstance().getReference("Puntuacion")
+            val idN = database.child("Puntuacion").push().key
 
-            var idN = database.child("Puntuacion").push().key
-            val puntuacionP =
-                Puntuaciones(idN, idP, valorR1.toString(), valorR2.toString(), valorR3.toString(), valorR4.toString(), valorR5.toString(), valorR6.toString())
-
-            database.child(idN!!)
-                .setValue(puntuacionP)
-                .addOnSuccessListener {
-                    Toast.makeText(
-                        this,
-                        "el registro ha sido cargado",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(
-                        this,
-                        "fallo el registo en BD debido a ${e.message}",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-
-            val refere = FirebaseDatabase.getInstance().getReference("Resultados")
-            val resultadoP =
-                Resultado(idN, idP, puntua1, puntua2, puntua3, puntua4, puntua5, puntua6)
-
-            refere.child(idN)
-                .setValue(resultadoP)
-                .addOnSuccessListener {
-                    Toast.makeText(
-                        this,
-                        "el registro ha sido cargado",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(
-                        this,
-                        "fallo el registo en BD debido a ${e.message}",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
+            SubirPuntuacion(idN!!, idP!!, valorR1, valorR2, valorR3, valorR4, valorR5, valorR6)
+            SubirResultado(idN, idP, puntua1, puntua2, puntua3, puntua4, puntua5, puntua6)
 
             val intent = Intent(this, recomendaciones::class.java).apply {
                 putExtra("key1", puntua1)
@@ -149,6 +110,53 @@ class resultado : AppCompatActivity() {
             val intent = Intent(this, bateria_ejercicio1::class.java)
             startActivity(intent)
         }
+    }
+
+    fun SubirPuntuacion(idN: String, id: String, valorR1: Int, valorR2: Int, valorR3: Double, valorR4: Double, valorR5: Double, valorR6: Int){
+        database = FirebaseDatabase.getInstance().getReference("Puntuacion")
+
+        val puntuacionP =
+            Puntuaciones(idN, id, valorR1.toString(), valorR2.toString(), valorR3.toString(), valorR4.toString(), valorR5.toString(), valorR6.toString())
+
+        database.child(idN)
+            .setValue(puntuacionP)
+            .addOnSuccessListener {
+                Toast.makeText(
+                    this,
+                    "el registro ha sido cargado",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(
+                    this,
+                    "fallo el registo en BD debido a ${e.message}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+    }
+
+    fun SubirResultado(idN: String, id: String, puntua1: String, puntua2: String, puntua3: String, puntua4: String, puntua5: String, puntua6: String){
+        val refere = FirebaseDatabase.getInstance().getReference("Resultados")
+        val resultadoP =
+            Resultado(idN, id, puntua1, puntua2, puntua3, puntua4, puntua5, puntua6)
+
+        refere.child(idN)
+            .setValue(resultadoP)
+            .addOnSuccessListener {
+                Toast.makeText(
+                    this,
+                    "el registro ha sido cargado",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(
+                    this,
+                    "fallo el registo en BD debido a ${e.message}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
     }
 
     fun CalcularPuntuacion( ages:Int, gene: String, valorR1: Int, valorR2: Int, valorR3: Double, valorR4: Double, valorR5: Double, valorR6: Int){

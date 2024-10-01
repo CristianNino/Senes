@@ -55,7 +55,7 @@ class ejercicios : AppCompatActivity() {
         startActivity(intent)
     }
     private fun Volver (){
-        val intent = Intent(this, recomendaciones::class.java)
+        val intent = Intent(this, menu::class.java)
         startActivity(intent)
     }
 
