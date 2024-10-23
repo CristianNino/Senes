@@ -81,7 +81,8 @@
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:backgroundTint="@color/white"
-            android:hint="Correo electronico" />
+            android:hint="Correo electronico"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 

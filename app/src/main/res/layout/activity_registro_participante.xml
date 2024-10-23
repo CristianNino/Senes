@@ -8,92 +8,11 @@
     android:background="@color/principal"
     tools:context=".registro_participante">
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="409dp"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204"
-        app:srcCompat="@mipmap/img1_np" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="409dp"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558"
-        app:srcCompat="@mipmap/img1_np" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="636dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/fondo1_np" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="340dp"
-        android:layout_height="565dp"
-        android:layout_marginTop="396dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/img2_np" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="409dp"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381"
-        app:srcCompat="@mipmap/img1_np" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="409dp"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292"
-        app:srcCompat="@mipmap/img1_np" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="409dp"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47"
-        app:srcCompat="@mipmap/img1_np" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="56dp"
         android:text="Datos nuevo participante"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -105,45 +24,96 @@
 
     <EditText
         android:id="@+id/editTextNombres"
-        android:layout_width="338dp"
+        android:layout_width="320dp"
         android:layout_height="62dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/transparente"
         android:ems="10"
         android:hint="Nombres"
         android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:backgroundTint="@color/transparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintVertical_bias="0.151" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="409dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.329"
+        app:srcCompat="@mipmap/img1_np" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="409dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419"
+        app:srcCompat="@mipmap/img1_np" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="409dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.508"
+        app:srcCompat="@mipmap/img1_np" />
 
     <EditText
-        android:id="@+id/editTextApellidos"
-        android:layout_width="338dp"
+        android:id="@+id/editTextPatologia"
+        android:layout_width="320dp"
         android:layout_height="62dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/transparente"
         android:ems="10"
-        android:hint="Apellidos"
+        android:hint="Patologia"
         android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:backgroundTint="@color/transparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextsexo"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
+        android:backgroundTint="@color/transparente"
+        android:completionThreshold="1"
+        android:hint="Sexo"
+        android:inputType="none"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.325" />
 
     <LinearLayout
-        android:layout_width="338dp"
+        android:layout_width="320dp"
         android:layout_height="62dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463">
+        app:layout_constraintVertical_bias="0.412">
 
 
         <TextView
@@ -160,38 +130,22 @@
             android:layout_width="142dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/white"
             android:background="@drawable/botones_forma"
-            android:text="selecciona fecha" />
+            android:text="selecciona fecha"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/editTextPatologia"
-        android:layout_width="338dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Patologia"
-        android:inputType="text"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:backgroundTint="@color/transparente"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="409dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
-    <TextView
-        android:id="@+id/textViewEdad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.241"
+        app:srcCompat="@mipmap/img1_np" />
 
     <Button
         android:id="@+id/buttonRegistroParticipante"
@@ -206,24 +160,66 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.652" />
+        app:layout_constraintVertical_bias="0.603" />
 
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextsexo"
-        android:layout_width="338dp"
-        android:layout_height="62dp"
-        android:inputType="none"
-        android:hint="Sexo"
-        android:completionThreshold="1"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:backgroundTint="@color/transparente"
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="409dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="0.153"
+        app:srcCompat="@mipmap/img1_np" />
+
+    <EditText
+        android:id="@+id/editTextApellidos"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/transparente"
+        android:ems="10"
+        android:hint="Apellidos"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.237" />
+
+    <TextView
+        android:id="@+id/textViewEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/senes_fondo" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="342dp"
+        android:layout_height="560dp"
+        android:layout_marginBottom="-75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/img2_np" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

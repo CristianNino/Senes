@@ -11,14 +11,14 @@
         android:id="@+id/textView33"
         android:layout_width="374dp"
         android:layout_height="158dp"
-        android:text="El excel ha sido generado y guardado exitosaente en la carpeta de descargas"
+        android:text="El excel ha sido generado y guardado exitosamente en la carpeta de descargas"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.293" />
 
     <ImageView
         android:id="@+id/imageView16"
@@ -32,9 +32,10 @@
         android:id="@+id/imageButtonExcelVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/regresar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

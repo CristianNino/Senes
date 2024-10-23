@@ -15,8 +15,7 @@ class AdapterParticipante(private val listaparticipantes: ArrayList<Participante
     class ViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
         val nombre : TextView = itemView.findViewById(R.id.textViewNombrepart)
         val apellido : TextView = itemView.findViewById(R.id.textViewApellidopart)
-
-
+        val patologia : TextView = itemView.findViewById(R.id.textViewPatologiapart)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterParticipante.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.participantebat,
@@ -31,5 +30,6 @@ class AdapterParticipante(private val listaparticipantes: ArrayList<Participante
 
         holder.nombre.text = participante.nombres
         holder.apellido.text = participante.apellidos
+        holder.patologia.text = participante.patologia
     }
 }

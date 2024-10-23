@@ -1,15 +1,18 @@
 package com.proyecto.senes
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.database.DataSnapshot
@@ -34,6 +37,11 @@ class generarExcel : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGenerarExcelBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         val database = FirebaseDatabase.getInstance()
         val referencia1 = database.getReference("Participantes")
@@ -93,24 +101,11 @@ class generarExcel : AppCompatActivity() {
         })
 
         val btnvolver = findViewById<ImageButton>(R.id.imageButtonExcelVolver)
-
-
         btnvolver.setOnClickListener {
             val intent = Intent(this, menu::class.java)
             startActivity(intent)
         }
-
     }
-
-    /*private fun permisos() {
-        solicitarPermisos.launch(
-            arrayOf(
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.READ_EXTERNAL_STORAGE
-
-            )
-        )
-    }*/
     private fun crearExcel(
         listaParti: List<ExcelParticipante>,
         listaPuntua: List<ExcelPuntucacion>,
@@ -118,7 +113,7 @@ class generarExcel : AppCompatActivity() {
     ) {
         val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
 
-        val fileName = "AAAAAB.xlsx"
+        val fileName = "Resultados.xlsx"
 
         // Crear un nuevo libro de trabajo Excel en formato .xlsx
         val workbook = XSSFWorkbook()
@@ -196,5 +191,3 @@ class generarExcel : AppCompatActivity() {
         }
     }
 }
-
-
