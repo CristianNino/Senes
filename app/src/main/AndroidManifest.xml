@@ -48,13 +48,13 @@
             android:name=".licencias"
             android:exported="false" />
         <activity
-            android:name=".prueba"
+            android:name=".menu"
             android:exported="false" />
         <activity
             android:name=".select_participante"
             android:exported="false" />
         <activity
-            android:name=".menu"
+            android:name=".prueba"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

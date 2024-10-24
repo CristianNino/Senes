@@ -3,28 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@mipmap/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".login_usuario">
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/fondo_log" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="361dp"
-        android:layout_height="353dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@mipmap/img1_log" />
 
     <Button
         android:id="@+id/buttonlogin"
@@ -71,7 +53,7 @@
         android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.520"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.442">
@@ -81,8 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:backgroundTint="@color/white"
-            android:hint="Correo electronico"
-            />
+            android:hint="Correo electronico" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,7 +73,7 @@
         app:endIconMode="password_toggle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.688"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.549">

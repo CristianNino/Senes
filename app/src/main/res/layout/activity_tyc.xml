@@ -5,18 +5,18 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/fondo_tyc2"
+    android:background="@mipmap/tyc"
     tools:context=".tyc">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="158dp"
         android:layout_height="58dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
         android:text="Terminos y condiciones"
         android:textColor="@color/principal"
         android:textSize="20sp"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,7 +25,7 @@
         android:layout_width="113dp"
         android:layout_height="55dp"
         android:layout_marginEnd="44dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/botones_forma_osuro"
         android:text="Inicio"
         android:textColor="@color/principal"
